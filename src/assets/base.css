@@ -1,0 +1,21 @@
+:root {
+  --white: #FFFFFF;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+}
