@@ -28,17 +28,11 @@ npm run dev
 npm run build
 ```
 
-<<<<<<< HEAD
-=======
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
 ```sh
 npm run test:unit
 ```
 
->>>>>>> 3515ee8 (Add Vitest for unit testing and Pinia for state management)
 ### Lint with [ESLint](https://eslint.org/)
 
-```sh
 npm run lint
 ```
