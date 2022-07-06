@@ -1,12 +1,21 @@
 <template>
-  <button class="btn">
+  <button :class="variant">
     <slot>Show all</slot>
   </button>
 </template>
 
-<script></script>
+<script>
+export default {
+  props: {
+    variant: {
+      type: String,
+      default: "btn",
+    },
+  },
+};
+</script>
 
-<style>
+<style scoped>
 .btn {
   height: 4rem;
   border-radius: 0.8rem;
