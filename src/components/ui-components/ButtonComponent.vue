@@ -1,5 +1,12 @@
 <template>
-  <button :class="`btn ${variant}`">
+  <button
+    :class="{
+      btn: true,
+      primary: isPrimary,
+      secondary: isSecondary,
+      outline: isOutline,
+    }"
+  >
     <slot>Show all</slot>
   </button>
 </template>
@@ -13,6 +20,20 @@ export default {
       validator: (propValue) => {
         return ["primary", "secondary", "outline"].includes(propValue);
       },
+    },
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    isPrimary() {
+      return this.variant === "primary";
+    },
+    isSecondary() {
+      return this.variant === "secondary";
+    },
+    isOutline() {
+      return this.variant === "outline";
     },
   },
 };
