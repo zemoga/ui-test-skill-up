@@ -5,6 +5,7 @@
     </h3>
     <h4 class="book__author line-clamp">{{ book.author }}</h4>
     <p class="book__members">5 interested</p>
+    <!--This is where the ButtonComponent will go-->
     <button class="btncomponent">Vote +</button>
   </div>
 </template>
@@ -20,7 +21,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .book {
   display: grid;
   grid-template-columns: repeat(4, minmax(1rem, 1fr));
@@ -30,6 +31,7 @@ export default {
     "author author author author"
     ". . members members"
     ". . btn btn";
+  flex-shrink: 0;
   width: 24.7rem;
   min-height: 18.3rem;
   padding: 2.1rem 1.6rem 1.4rem 2rem;

@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import BookCard from "@/components/BookCard.vue";
 import fakeBooks from "./assets/data.json";
 </script>
@@ -30,4 +30,4 @@ main {
   flex-direction: column;
   gap: 1.3rem;
 }
-</style>
+</style> -->
