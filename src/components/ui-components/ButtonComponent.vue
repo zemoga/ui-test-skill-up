@@ -9,12 +9,9 @@ export default {
   props: {
     variant: {
       type: String,
-      default: "btn",
+      default: "primary",
       validator: (propValue) => {
-        const isVariantPrimary = propValue.includes("primary");
-        const isVariantSecondary = propValue.includes("secondary");
-        const isVariantOutline = propValue.includes("outline");
-        return isVariantPrimary || isVariantSecondary || isVariantOutline;
+        return ["primary", "secondary", "outline"].includes(propValue);
       },
     },
   },
