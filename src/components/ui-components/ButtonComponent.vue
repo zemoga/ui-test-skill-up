@@ -1,5 +1,5 @@
 <template>
-  <button :class="variant">
+  <button class="btn" :class="variant">
     <slot>Show all</slot>
   </button>
 </template>
@@ -10,6 +10,12 @@ export default {
     variant: {
       type: String,
       default: "btn",
+      validator: (propValue) => {
+        const isVariantPrimary = propValue.includes("primary");
+        const isVariantSecondary = propValue.includes("secondary");
+        const isVariantOutline = propValue.includes("outline");
+        return isVariantPrimary || isVariantSecondary || isVariantOutline;
+      },
     },
   },
 };
@@ -40,43 +46,10 @@ export default {
   color: #fff;
 }
 
-.cta {
+.outline {
   width: 9.9rem;
   background: #fff;
   border: 0.2rem solid #000;
   color: #000;
-}
-
-.forward {
-  width: 4rem;
-  background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.96),
-      rgba(255, 255, 255, 0.96)
-    ),
-    #000000;
-  border-radius: 4rem;
-}
-
-.back {
-  width: 4rem;
-  background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.72),
-      rgba(255, 255, 255, 0.72)
-    ),
-    #000000;
-  border-radius: 4rem;
-}
-
-.login {
-  width: 7.9rem;
-  background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.72),
-      rgba(255, 255, 255, 0.72)
-    ),
-    #000000;
-  color: #fff;
 }
 </style>
