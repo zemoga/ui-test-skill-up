@@ -70,13 +70,6 @@ export default {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-/*This class shortens any long titles or author names to two lines*/
-.line-clamp {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
 
 /* Class with the extended with of each book card */
 .extended {
