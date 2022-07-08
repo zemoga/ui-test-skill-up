@@ -1,12 +1,16 @@
 <template>
   <div class="book">
-    <h3 class="book__title line-clamp">
-      {{ book.title }}
-    </h3>
-    <h4 class="book__author line-clamp">{{ book.author }}</h4>
-    <p class="book__members">5 interested</p>
-    <!--This is where the ButtonComponent will go-->
-    <button class="btncomponent">Vote +</button>
+    <div class="book__info">
+      <h3 class="book__info--title line-clamp">
+        {{ book.title }}
+      </h3>
+      <h4 class="book__info--author line-clamp">{{ book.author }}</h4>
+    </div>
+    <div class="book__participants">
+      <p class="book__participants--text">5 interested</p>
+      <!--This is where the ButtonComponent will go-->
+      <button class="btncomponent">Vote +</button>
+    </div>
   </div>
 </template>
 
@@ -23,14 +27,9 @@ export default {
 
 <style scoped>
 .book {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(1rem, 1fr));
-  grid-template-rows: repeat(4, minmax(1rem, 1fr));
-  grid-template-areas:
-    "title title title title"
-    "author author author author"
-    ". . members members"
-    ". . btn btn";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex-shrink: 0;
   width: 24.7rem;
   min-height: 18.3rem;
@@ -40,9 +39,7 @@ export default {
   border-radius: 0.8rem;
 }
 
-.book__title {
-  grid-area: title;
-  align-self: end;
+.book__info--title {
   font-family: sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
@@ -51,19 +48,20 @@ export default {
   text-overflow: ellipsis;
 }
 
-.book__author {
-  grid-area: author;
+.book__info--author {
   font-family: sans-serif;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 2rem;
   text-transform: uppercase;
+  text-overflow: ellipsis;
 }
 
-.book__members {
-  grid-area: members;
-  justify-self: center;
-  align-self: end;
+.book__participants {
+  align-self: flex-end;
+}
+
+.book__participants--text {
   margin-bottom: 0.2rem;
   font-family: sans-serif;
   font-size: 1.2rem;
@@ -72,7 +70,7 @@ export default {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-
+/*This class shortens any long titles or author names to two lines*/
 .line-clamp {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -80,7 +78,8 @@ export default {
   overflow: hidden;
 }
 
-.btncomponent {
-  grid-area: btn;
+/* Class with the extended with of each book card */
+.extended {
+  width: 31.3rem;
 }
 </style>
