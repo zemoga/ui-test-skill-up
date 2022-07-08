@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "In Search of Lost Time",
+    "author": "Marcel Proust"
+  },
+  {
+    "id": 2,
+    "title": "Ulysses",
+    "author": "James Joyce"
+  },
+  {
+    "id": 3,
+    "title": "Don Quixote",
+    "author": "Miguel de Cervantes"
+  },
+  {
+    "id": 4,
+    "title": "One Hundred Years of Solitude and Lorem ipsum dolor sit amet consectetur",
+    "author": "Gabriel Garcia Marquez"
+  },
+  {
+    "id": 5,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald"
+  },
+  {
+    "id": 6,
+    "title": "Moby Dick",
+    "author": "Herman Melville and Lorem ipsum dolor sit amet consectetur"
+  },
+  {
+    "id": 7,
+    "title": "War and Peace",
+    "author": "Leo Tolstoy"
+  },
+  {
+    "id": 8,
+    "title": "Hamlet",
+    "author": "William Shakespeare"
+  }
+]
