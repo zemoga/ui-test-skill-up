@@ -1,6 +1,6 @@
 <template>
   <div class="header-container">
-    <router-link :to="{ name: 'home' }"><button>←</button></router-link>
+    <button @click="this.$router.go(-1)">←</button>
     <img src="../images/mediamonks.png" alt="Media Monks logo" />
   </div>
 </template>
@@ -13,5 +13,8 @@ export default {
 <style scoped>
 .header-container {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
 }
 </style>

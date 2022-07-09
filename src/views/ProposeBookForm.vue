@@ -1,77 +1,82 @@
 <template>
-  <MainHeader></MainHeader>
-  <div class="propose-book-container">
-    <h2 class="propose-book__title">Book's information</h2>
-    <span class="propose-book__description text-m"
-      >Fill this form to propose your book
-    </span>
+  <div class="propose-book-form-container">
+    <MainHeader></MainHeader>
+    <div class="propose-book-container">
+      <h2 class="propose-book__title">Book's information</h2>
+      <span class="propose-book__description text-m"
+        >Fill this form to propose your book
+      </span>
 
-    <form @submit="submitForm" class="form-container">
-      <FormLabel id="title">
-        <template v-slot:labelDescription>Title</template>
-        <template v-slot:labelInput>
-          <input
-            type="text"
-            id="title"
-            placeholder="Type book's title"
-            maxlength="150"
-            minlength="2"
-            required
-            class="label__input label__input-caps"
-            v-model="title"
-          />
-        </template>
-      </FormLabel>
+      <form @submit="submitForm" class="form-container">
+        <FormLabel id="title">
+          <template v-slot:labelDescription>Title</template>
+          <template v-slot:labelInput>
+            <input
+              type="text"
+              id="title"
+              placeholder="Type book's title"
+              maxlength="150"
+              required
+              class="label__input label__input-caps"
+              v-model="title"
+            />
+          </template>
+        </FormLabel>
 
-      <FormLabel id="author">
-        <template v-slot:labelDescription>Athor</template>
-        <template v-slot:labelInput>
-          <input
-            type="text"
-            id="author"
-            placeholder="Type author's full name"
-            maxlength="100"
-            minlength="2"
-            required
-            class="label__input label__input-caps"
-            v-model="author"
-          />
-        </template>
-      </FormLabel>
+        <FormLabel id="author">
+          <template v-slot:labelDescription>Author</template>
+          <template v-slot:labelInput>
+            <input
+              type="text"
+              id="author"
+              placeholder="Type author's full name"
+              maxlength="100"
+              required
+              class="label__input label__input-caps"
+              v-model="author"
+            />
+          </template>
+        </FormLabel>
 
-      <FormLabel id="link">
-        <template v-slot:labelDescription>Link</template>
-        <template v-slot:labelInput>
-          <input
-            type="url"
-            id="link"
-            placeholder="Where can we buy this book?"
-            maxlength="300"
-            required
-            class="label__input"
-            v-model="link"
-          />
-        </template>
-      </FormLabel>
+        <FormLabel id="link">
+          <template v-slot:labelDescription>Link</template>
+          <template v-slot:labelInput>
+            <input
+              type="url"
+              id="link"
+              placeholder="Where can we buy this book?"
+              maxlength="300"
+              required
+              class="label__input"
+              v-model="link"
+            />
+          </template>
+        </FormLabel>
 
-      <FormLabel id="synopsis">
-        <template v-slot:labelDescription>Synopsis</template>
-        <template v-slot:labelInput>
-          <textarea
-            type="text"
-            id="synopsis"
-            placeholder="Write a short synopsis about this book... &#10;&#10;500 characters max."
-            maxlength="500"
-            required
-            class="label__input label__input-extended"
-            v-model="synopsis"
-          ></textarea>
-        </template>
-      </FormLabel>
-      <button type="submit">Let's propose this book!</button>
-    </form>
-    <div class="propose-book__final-note">
-      <p class="text-xs">Remember, you can only propose one book each month</p>
+        <FormLabel id="synopsis">
+          <template v-slot:labelDescription>Synopsis</template>
+          <template v-slot:labelInput>
+            <textarea
+              type="text"
+              id="synopsis"
+              placeholder="Write a short synopsis about this book... &#10;&#10;500 characters max."
+              maxlength="500"
+              required
+              class="label__input label__input-extended"
+              v-model="synopsis"
+            ></textarea>
+          </template>
+        </FormLabel>
+
+        <button type="submit" :disabled="buttonDisable">
+          Let's propose this book!
+        </button>
+      </form>
+      <div class="propose-book__final-note">
+        <p class="text-xs">
+          Remember, you can only propose one book each month
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -86,13 +91,13 @@ export default {
     FormLabel,
     MainHeader,
   },
+
   data() {
     return {
       title: "",
       author: "",
       link: "",
       synopsis: "",
-      submitted: "no",
     };
   },
   computed: {
@@ -102,10 +107,13 @@ export default {
     authorUpperCase() {
       return this.author.toUpperCase();
     },
+    buttonDisable() {
+      return !(this.title && this.author && this.link && this.synopsis);
+    },
   },
   methods: {
     submitForm() {
-      this.submitted = "tessssss";
+      console.log("Submitted!");
     },
   },
 };
@@ -113,7 +121,6 @@ export default {
 
 <style scoped>
 .propose-book-container {
-  margin: 2rem;
   padding: 1.6rem;
   border: solid 2px rgb(162, 160, 160);
   border-radius: 8px;
@@ -121,10 +128,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  vertical-align: middle;
 }
 
 .label__input-extended {
-  height: 109px;
+  min-height: 109px;
   text-transform: none;
   resize: none;
 }
@@ -132,12 +140,11 @@ export default {
   padding: 1rem 2.6rem;
   border: solid 2px rgb(162, 160, 160);
   border-radius: 8px;
-  height: 54px;
+  min-height: 54px;
   width: 84%;
   text-align: center;
   text-justify: center;
   margin-top: 1.5rem;
-  margin-bottom: 2rem;
   background-color: white;
 }
 .form-container {
@@ -149,5 +156,10 @@ export default {
 
 button {
   margin-top: 1.5rem;
+}
+
+.propose-book-form-container {
+  padding: 2rem;
+  height: 100vh;
 }
 </style>
