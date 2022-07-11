@@ -17,7 +17,7 @@
               placeholder="Type book's title"
               maxlength="150"
               required
-              class="label__input label__input-caps"
+              class="label__input label__input--caps"
               v-model="title"
             />
           </template>
@@ -32,7 +32,7 @@
               placeholder="Type author's full name"
               maxlength="100"
               required
-              class="label__input label__input-caps"
+              class="label__input label__input--caps"
               v-model="author"
             />
           </template>
@@ -62,7 +62,7 @@
               placeholder="Write a short synopsis about this book... &#10;&#10;500 characters max."
               maxlength="500"
               required
-              class="label__input label__input-extended"
+              class="label__input label__input--extended"
               v-model="synopsis"
             ></textarea>
           </template>
@@ -72,7 +72,7 @@
           Let's propose this book!
         </button>
       </form>
-      <div class="propose-book__final-note">
+      <div class="propose-book__final--note">
         <p class="text-xs">
           Remember, you can only propose one book each month
         </p>
@@ -128,15 +128,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  vertical-align: middle;
 }
 
-.label__input-extended {
-  min-height: 109px;
-  text-transform: none;
-  resize: none;
-}
-.propose-book__final-note {
+.propose-book__final--note {
   padding: 1rem 2.6rem;
   border: solid 2px rgb(162, 160, 160);
   border-radius: 8px;

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import ProposeBookForm from "../viewS/ProposeBookForm.vue";
+import ProposeBookForm from "../views/ProposeBookForm.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
