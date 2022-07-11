@@ -1,20 +1,30 @@
+<script setup>
+import fakeBooks from "../assets/data.json";
+import ButtonComponent from "./ui-components/ButtonComponent.vue";
+import BookCard from "./BookCard.vue";
+</script>
+
 <template>
   <h2 class="title">Proposed books</h2>
   <p class="info">Proposed books for this month</p>
   <div class="carousel">
-    <div class="test">This is where the bookcards will go</div>
-    <div class="test">This is where the bookcards will go</div>
-    <div class="test">This is where the bookcards will go</div>
-    <div class="test">This is where the bookcards will go</div>
-    <div class="test">This is where the bookcards will go</div>
+    <BookCard v-for="book in books" :key="book.id" :book="book"></BookCard>
   </div>
   <div class="btns-container">
-    <!--Will be the button component-->
-    <button>Show all</button>
-    <!--Will be the button component-->
-    <button>Propose a book</button>
+    <ButtonComponent></ButtonComponent>
+    <ButtonComponent></ButtonComponent>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      books: fakeBooks,
+    };
+  },
+};
+</script>
 
 <style>
 .carousel {

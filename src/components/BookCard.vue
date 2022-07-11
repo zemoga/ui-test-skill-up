@@ -1,3 +1,7 @@
+<script setup>
+import ButtonComponent from "./ui-components/ButtonComponent.vue";
+</script>
+
 <template>
   <div class="book">
     <div class="book__info">
@@ -8,8 +12,7 @@
     </div>
     <div class="book__participants">
       <p class="book__participants--text">5 interested</p>
-      <!--This is where the ButtonComponent will go-->
-      <button class="btncomponent">Vote +</button>
+      <ButtonComponent></ButtonComponent>
     </div>
   </div>
 </template>
