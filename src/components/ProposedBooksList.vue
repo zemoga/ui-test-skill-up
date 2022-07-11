@@ -40,11 +40,4 @@ export default {
 .carousel::-webkit-scrollbar {
   display: none;
 }
-
-.test {
-  flex-shrink: 0;
-  width: 24.7rem;
-  height: 18.3rem;
-  background-color: aquamarine;
-}
 </style>

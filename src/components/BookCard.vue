@@ -74,7 +74,7 @@ export default {
   text-transform: uppercase;
 }
 
-/* Class with the extended with of each book card */
+/* Class with the extended width of each book card */
 .extended {
   width: 31.3rem;
 }
