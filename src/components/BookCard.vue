@@ -1,7 +1,3 @@
-<script setup>
-import ButtonComponent from "./ui-components/ButtonComponent.vue";
-</script>
-
 <template>
   <div class="book">
     <div class="book__info">
@@ -18,7 +14,12 @@ import ButtonComponent from "./ui-components/ButtonComponent.vue";
 </template>
 
 <script>
+import ButtonComponent from "./ui-components/ButtonComponent.vue";
+
 export default {
+  components: {
+    ButtonComponent,
+  },
   props: {
     book: {
       type: Object,

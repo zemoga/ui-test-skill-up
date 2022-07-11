@@ -1,9 +1,3 @@
-<script setup>
-import fakeBooks from "../assets/data.json";
-import ButtonComponent from "./ui-components/ButtonComponent.vue";
-import BookCard from "./BookCard.vue";
-</script>
-
 <template>
   <h2 class="title">Proposed books</h2>
   <p class="info">Proposed books for this month</p>
@@ -17,7 +11,15 @@ import BookCard from "./BookCard.vue";
 </template>
 
 <script>
+import fakeBooks from "../assets/data.json";
+import BookCard from "./BookCard.vue";
+import ButtonComponent from "./ui-components/ButtonComponent.vue";
+
 export default {
+  components: {
+    BookCard,
+    ButtonComponent
+  },
   data() {
     return {
       books: fakeBooks,

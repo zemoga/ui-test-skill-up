@@ -1,16 +1,12 @@
-<script setup>
-import ProposedBooksList from "@/components/ProposedBooksList.vue";
-</script>
-
 <template>
-  <router-view>
-    <section class="container proposed-books">
-      <ProposedBooksList></ProposedBooksList>
-    </section>
-  </router-view>
+  <section class="container proposed-books">
+    <ProposedBooksList></ProposedBooksList>
+  </section>
 </template>
 
 <script>
+import ProposedBooksList from "@/components/ProposedBooksList.vue";
+
 export default {
   name: "ProposedBooksList",
   components: {
