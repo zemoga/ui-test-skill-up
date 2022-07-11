@@ -27,7 +27,9 @@ html {
 
 body {
   min-height: 100vh;
+  margin: 0;
 }
+
 
 /* Font classes */
 .text-xs {
@@ -60,6 +62,22 @@ h2 {
 h3 {
   font-size: 1.8rem;
   line-height: 2.3rem;
+}
+
+/* Form input classes */
+
+input::placeholder {
+  text-transform: none;
+}
+
+.label__input--caps {
+  text-transform: uppercase;
+}
+
+.label__input--extended {
+  min-height: 109px;
+  text-transform: none;
+  resize: none;
 }
 
 /*This class shortens any long titles or author names to two lines*/
@@ -200,6 +218,18 @@ h3 {
 .my-1 {
   padding-top:0.8rem;
   padding-bottom: 0.8rem;
+}
+
+.label__input {
+  border: solid 2px black;
+  border-radius: 8px;
+  color: black;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  margin-top: 0.6rem;
+  padding: 0.8rem 1.6rem;
 }
 
 .mx-2 {
