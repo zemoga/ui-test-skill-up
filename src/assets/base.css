@@ -7,6 +7,8 @@
   --blue-interactive: #4536E5;
   --orange-active-book: #EE9A40;
   --blue-proposed-book: #6AB8BF;
+
+  --secondary-font: 'Space Grotesk', sans-serif;
 }
 
 *,
@@ -28,6 +30,11 @@ body {
 }
 
 /* Font classes */
+.text-xs {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
 .text-s {
   font-size: 1.4rem;
   line-height: 1.7rem;
