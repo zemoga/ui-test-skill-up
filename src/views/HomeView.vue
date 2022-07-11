@@ -3,9 +3,11 @@ import ProposedBooksList from "@/components/ProposedBooksList.vue";
 </script>
 
 <template>
-  <section class="container proposed-books">
-    <ProposedBooksList></ProposedBooksList>
-  </section>
+  <router-view>
+    <section class="container proposed-books">
+      <ProposedBooksList></ProposedBooksList>
+    </section>
+  </router-view>
 </template>
 
 <script>
