@@ -1,18 +1,8 @@
 <template>
   <main>
-    <HomeView></HomeView>
+    <router-view />
   </main>
 </template>
-
-<script>
-import HomeView from "./views/HomeView.vue";
-
-export default {
-  components: {
-    HomeView,
-  },
-};
-</script>
 
 <style>
 @import "./assets/base.css";
