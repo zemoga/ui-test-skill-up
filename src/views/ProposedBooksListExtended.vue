@@ -30,22 +30,22 @@ export default {
         {
           title: "El principito",
           author: "Antoine Marie Jean-Baptiste",
-          votes: 4,
         },
         {
           title: "El principito",
           author: "Antoine Marie Jean-Baptiste",
-          votes: 3,
         },
         {
           title: "El principito",
           author: "Antoine Marie Jean-Baptiste",
-          votes: 2,
         },
         {
           title: "El principito",
           author: "Antoine Marie Jean-Baptiste",
-          votes: 1,
+        },
+        {
+          title: "El principito",
+          author: "Antoine Marie Jean-Baptiste",
         },
       ],
     };

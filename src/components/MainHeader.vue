@@ -1,8 +1,8 @@
 <template>
   <div class="header-container">
-    <ButtonComponent variant="rounded" @click="this.$router.go(-1)"
+    <ButtonBC variant="rounded" @click="this.$router.go(-1)"
       ><img src="./icons/arrow-left.svg" alt="←"
-    /></ButtonComponent>
+    /></ButtonBC>
     <img
       class="header__logo"
       src="../images/mediamonks.png"
@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import ButtonComponent from "../components/ui-components/ButtonComponent.vue";
+import ButtonBC from "../components/ui-components/ButtonComponent.vue";
 
 export default {
   name: "MainHeader",
   components: {
-    ButtonComponent,
+    ButtonBC,
   },
 };
 </script>
