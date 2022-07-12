@@ -153,7 +153,7 @@ button {
 }
 
 .propose-book-form-container {
-  padding: 2rem;
+  padding: 1.7rem;
   height: 100vh;
 }
 </style>
