@@ -5,14 +5,21 @@ import router from "./router";
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import {
   BiArrowLeft,
-  BiArrowRight,
+  HiSolidArrowNarrowRight,
   HiCheck,
   IoSearch,
   BiBook,
   HiSolidPlus,
 } from "oh-vue-icons/icons";
 
-addIcons(BiArrowLeft, BiArrowRight, HiSolidPlus, HiCheck, IoSearch, BiBook);
+addIcons(
+  BiArrowLeft,
+  HiSolidArrowNarrowRight,
+  HiSolidPlus,
+  HiCheck,
+  IoSearch,
+  BiBook
+);
 
 const app = createApp(App);
 
