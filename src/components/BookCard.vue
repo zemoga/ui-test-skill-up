@@ -8,17 +8,18 @@
     </div>
     <div class="book__participants">
       <p class="book__participants--text">5 interested</p>
-      <ButtonComponent></ButtonComponent>
+      <button-bc></button-bc>
     </div>
   </div>
 </template>
 
 <script>
-import ButtonComponent from "./ui-components/ButtonComponent.vue";
+import ButtonBC from "./ui-components/ButtonComponent.vue";
 
 export default {
+  name: "BookCard",
   components: {
-    ButtonComponent,
+    "button-bc": ButtonBC,
   },
   props: {
     book: {

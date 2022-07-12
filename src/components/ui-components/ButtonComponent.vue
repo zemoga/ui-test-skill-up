@@ -13,6 +13,7 @@
 
 <script>
 export default {
+  name: "ButtonBC",
   props: {
     variant: {
       type: String,

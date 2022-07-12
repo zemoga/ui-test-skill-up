@@ -1,17 +1,15 @@
 <template>
-  <router-view>
-    <main>
-      <ProposedBooksList></ProposedBooksList>
-    </main>
-  </router-view>
+  <main>
+    <HomeView></HomeView>
+  </main>
 </template>
 
 <script>
-import ProposedBooksList from "./components/ProposedBooksList.vue";
+import HomeView from "./views/HomeView.vue";
 
 export default {
   components: {
-    ProposedBooksList,
+    HomeView,
   },
 };
 </script>
