@@ -18,7 +18,7 @@ import ButtonComponent from "./ui-components/ButtonComponent.vue";
 export default {
   components: {
     BookCard,
-    ButtonComponent
+    ButtonComponent,
   },
   data() {
     return {
