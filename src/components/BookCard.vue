@@ -8,14 +8,18 @@
     </div>
     <div class="book__participants">
       <p class="book__participants--text">5 interested</p>
-      <!--This is where the ButtonComponent will go-->
-      <button class="btncomponent">Vote +</button>
+      <ButtonComponent></ButtonComponent>
     </div>
   </div>
 </template>
 
 <script>
+import ButtonComponent from "./ui-components/ButtonComponent.vue";
+
 export default {
+  components: {
+    ButtonComponent,
+  },
   props: {
     book: {
       type: Object,
@@ -71,7 +75,7 @@ export default {
   text-transform: uppercase;
 }
 
-/* Class with the extended with of each book card */
+/* Class with the extended width of each book card */
 .extended {
   min-width: 31.3rem;
   margin-bottom: 1.5rem;
