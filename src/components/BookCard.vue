@@ -1,14 +1,27 @@
 <template>
-  <div class="book">
-    <div class="book__info">
-      <h3 class="book__info--title line-clamp">
+  <div class="book-card">
+    <div class="book-card__info">
+      <h3 class="book-card__info--title line-clamp">
         {{ book.title }}
       </h3>
-      <h4 class="book__info--author line-clamp">{{ book.author }}</h4>
+      <h4 class="book-card__info--author line-clamp">{{ book.author }}</h4>
     </div>
-    <div class="book__participants">
-      <p class="book__participants--text">5 interested</p>
-      <button-bc></button-bc>
+    <div class="book-card__footer">
+      <v-icon name="bi-book" scale="3" class="book-icon" />
+      <div class="book-card__participants">
+        <p class="book-card__participants--text">
+          {{ book.participants }} interested
+        </p>
+        <button-bc class="font-medium vote-btn">
+          Vote<v-icon
+            name="hi-solid-plus"
+            scale="0.8"
+            animation="wrench"
+            hover
+            class="plus-icon"
+          />
+        </button-bc>
+      </div>
     </div>
   </div>
 </template>
@@ -31,12 +44,12 @@ export default {
 </script>
 
 <style scoped>
-.book {
+.book-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-shrink: 0;
-  width: 24.7rem;
+  width: 25.3rem;
   min-height: 18.3rem;
   padding: 2.1rem 1.6rem 1.4rem 2rem;
   background: #fff;
@@ -44,7 +57,7 @@ export default {
   border-radius: 0.8rem;
 }
 
-.book__info--title {
+.book-card__info--title {
   font-family: sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
@@ -53,7 +66,7 @@ export default {
   text-overflow: ellipsis;
 }
 
-.book__info--author {
+.book-card__info--author {
   font-family: sans-serif;
   font-size: 1.4rem;
   font-weight: 500;
@@ -62,11 +75,18 @@ export default {
   text-overflow: ellipsis;
 }
 
-.book__participants {
+.book-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.book-icon {
   align-self: flex-end;
 }
 
-.book__participants--text {
+.book-card__participants--text {
   margin-bottom: 0.2rem;
   font-family: sans-serif;
   font-size: 1.2rem;
@@ -78,6 +98,24 @@ export default {
 
 /* Class with the extended width of each book card */
 .extended {
-  width: 31.3rem;
+  width: 34.3rem;
+}
+
+.vote-btn {
+  box-shadow: none;
+}
+
+.plus-icon {
+  margin-left: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  .book-card {
+    width: 34.3rem;
+  }
+
+  .vote-btn {
+    width: 10.8rem;
+  }
 }
 </style>
