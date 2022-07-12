@@ -5,20 +5,21 @@
     <BookCard v-for="book in books" :key="book.id" :book="book"></BookCard>
   </div>
   <div class="btns-container">
-    <ButtonComponent></ButtonComponent>
-    <ButtonComponent></ButtonComponent>
+    <button-bc></button-bc>
+    <button-bc></button-bc>
   </div>
 </template>
 
 <script>
 import fakeBooks from "../assets/data.json";
 import BookCard from "./BookCard.vue";
-import ButtonComponent from "./ui-components/ButtonComponent.vue";
+import ButtonBC from "./ui-components/ButtonComponent.vue";
 
 export default {
+  name: "ProposedBooksList",
   components: {
     BookCard,
-    ButtonComponent
+    "button-bc": ButtonBC,
   },
   data() {
     return {

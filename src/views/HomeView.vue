@@ -8,7 +8,7 @@
 import ProposedBooksList from "@/components/ProposedBooksList.vue";
 
 export default {
-  name: "ProposedBooksList",
+  name: "HomeView",
   components: {
     ProposedBooksList,
   },

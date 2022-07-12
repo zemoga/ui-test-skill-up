@@ -4,7 +4,7 @@
       btn: true,
       primary: isPrimary,
       secondary: isSecondary,
-      outline: isOutline,
+      tertiary: isTertiary,
       rounded: isRounded,
     }"
   >
@@ -14,12 +14,13 @@
 
 <script>
 export default {
+  name: "ButtonBC",
   props: {
     variant: {
       type: String,
       default: "primary",
       validator: (propValue) => {
-        return ["primary", "secondary", "outline", "rounded"].includes(
+        return ["primary", "secondary", "tertiary", "rounded"].includes(
           propValue
         );
       },
@@ -35,8 +36,8 @@ export default {
     isSecondary() {
       return this.variant === "secondary";
     },
-    isOutline() {
-      return this.variant === "outline";
+    isTertiary() {
+      return this.variant === "tertiary";
     },
     isRounded() {
       return this.variant === "rounded";
@@ -47,39 +48,41 @@ export default {
 
 <style scoped>
 .btn {
+  width: 11.2rem;
   height: 4rem;
   border-radius: 0.8rem;
   border: none;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+  font-family: var(--secondary-font);
   font-size: 1.6rem;
+  color: var(--white);
 }
 
 .primary {
-  width: 11.8rem;
-  background: #000;
-  color: #fff;
+  background: var(--blue-interactive);
 }
-
 .secondary {
-  width: 17.3rem;
-  background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.72),
-      rgba(255, 255, 255, 0.72)
-    ),
-    #000000;
-  color: #fff;
+  background: var(--orange-active-book);
 }
 
-.outline {
-  width: 9.9rem;
-  background: #fff;
-  border: 0.2rem solid #000;
-  color: #000;
+.tertiary {
+  width: 19.2rem;
+  background: var(--gray);
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.25);
 }
-
 .rounded {
   border-radius: 50%;
   width: 48px;
   height: 48px;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    width: 34.3rem;
+  }
+
+  .tertiary {
+    height: 7rem;
+  }
 }
 </style>
