@@ -63,4 +63,14 @@ export default {
   background: var(--gray);
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.25);
 }
+
+@media (min-width: 768px) {
+  .btn {
+    width: 34.3rem;
+  }
+
+  .tertiary {
+    height: 7rem;
+  }
+}
 </style>
