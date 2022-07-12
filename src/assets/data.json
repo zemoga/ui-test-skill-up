@@ -2,41 +2,49 @@
   {
     "id": 1,
     "title": "In Search of Lost Time",
-    "author": "Marcel Proust"
+    "author": "Marcel Proust",
+    "participants": 3
   },
   {
     "id": 2,
     "title": "Ulysses",
-    "author": "James Joyce"
+    "author": "James Joyce",
+    "participants": 1
   },
   {
     "id": 3,
     "title": "Don Quixote",
-    "author": "Miguel de Cervantes"
+    "author": "Miguel de Cervantes",
+    "participants": 0
   },
   {
     "id": 4,
     "title": "One Hundred Years of Solitude and Lorem ipsum dolor sit amet consectetur",
-    "author": "Gabriel Garcia Marquez"
+    "author": "Gabriel Garcia Marquez",
+    "participants": 7
   },
   {
     "id": 5,
     "title": "The Great Gatsby",
-    "author": "F. Scott Fitzgerald"
+    "author": "F. Scott Fitzgerald",
+    "participants": 4
   },
   {
     "id": 6,
     "title": "Moby Dick",
-    "author": "Herman Melville and Lorem ipsum dolor sit amet consectetur"
+    "author": "Herman Melville and Lorem ipsum dolor sit amet consectetur",
+    "participants": 9
   },
   {
     "id": 7,
     "title": "War and Peace",
-    "author": "Leo Tolstoy"
+    "author": "Leo Tolstoy",
+    "participants": 5
   },
   {
     "id": 8,
     "title": "Hamlet",
-    "author": "William Shakespeare"
+    "author": "William Shakespeare",
+    "participants": 12
   }
 ]
