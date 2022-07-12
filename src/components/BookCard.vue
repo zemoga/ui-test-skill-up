@@ -77,7 +77,7 @@ export default {
 
 /* Class with the extended width of each book card */
 .extended {
-  min-width: 31.3rem;
-  margin-bottom: 1.5rem;
+  width: 100%;
+  margin: 0 0 1.6rem 0;
 }
 </style>

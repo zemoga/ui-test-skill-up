@@ -1,9 +1,8 @@
 <template>
   <div class="header-container">
-    <ButtonComponent
-      variant="outline"
-      @click="this.$router.go(-1)"
-    ></ButtonComponent>
+    <ButtonComponent variant="rounded" @click="this.$router.go(-1)"
+      ><img src="./icons/arrow-left.svg" alt="←"
+    /></ButtonComponent>
     <img
       class="header__logo"
       src="../images/mediamonks.png"
@@ -28,6 +27,7 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   align-items: center;
+  margin-bottom: 2.4rem;
 }
 
 .header__logo {

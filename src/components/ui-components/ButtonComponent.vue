@@ -5,6 +5,7 @@
       primary: isPrimary,
       secondary: isSecondary,
       outline: isOutline,
+      rounded: isRounded,
     }"
   >
     <slot>Show all</slot>
@@ -18,7 +19,9 @@ export default {
       type: String,
       default: "primary",
       validator: (propValue) => {
-        return ["primary", "secondary", "outline"].includes(propValue);
+        return ["primary", "secondary", "outline", "rounded"].includes(
+          propValue
+        );
       },
     },
   },
@@ -34,6 +37,9 @@ export default {
     },
     isOutline() {
       return this.variant === "outline";
+    },
+    isRounded() {
+      return this.variant === "rounded";
     },
   },
 };
@@ -69,5 +75,11 @@ export default {
   background: #fff;
   border: 0.2rem solid #000;
   color: #000;
+}
+
+.rounded {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
 }
 </style>

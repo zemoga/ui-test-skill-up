@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ProposeBookForm from "../views/ProposeBookForm.vue";
-import ProposedBooksList from "../views/ProposedBooksList.vue";
+import ProposedBooksListExtended from "../views/ProposedBooksListExtended.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,8 +18,8 @@ const router = createRouter({
     },
     {
       path: "/proposed-books-list",
-      name: "ProposedBooksList",
-      component: ProposedBooksList,
+      name: "ProposedBooksListExtended",
+      component: ProposedBooksListExtended,
     },
   ],
 });
