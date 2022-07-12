@@ -1,6 +1,20 @@
 <template>
-  <router-view />
+  <router-view>
+    <main>
+      <ProposedBooksList></ProposedBooksList>
+    </main>
+  </router-view>
 </template>
+
+<script>
+import ProposedBooksList from "./components/ProposedBooksList.vue";
+
+export default {
+  components: {
+    ProposedBooksList,
+  },
+};
+</script>
 
 <style>
 @import "./assets/base.css";
