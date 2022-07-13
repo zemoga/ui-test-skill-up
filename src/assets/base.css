@@ -1,3 +1,33 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./fonts/Helvetica-Neue-Light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./fonts/Helvetica-Neue-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./fonts/Helvetica-Neue-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./fonts/Helvetica-Neue-Semibold.ttf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./fonts/Helvetica-Neue-Bold.ttf');
+  font-weight: 700;
+}
+
 :root {
   --white: #FFFFFF;
   --black: #000000;
@@ -7,7 +37,7 @@
   --blue-interactive: #4536E5;
   --orange-active-book: #EE9A40;
   --blue-proposed-book: #6AB8BF;
-
+  --primary-font: 'Helvetica Neue', sans-serif;
   --secondary-font: 'Space Grotesk', sans-serif;
 }
 
@@ -28,6 +58,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
+  font-family: var(--primary-font);
 }
 
 
