@@ -52,6 +52,7 @@ export default {
   height: 4rem;
   border-radius: 0.8rem;
   border: none;
+  background: transparent;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
   font-family: var(--secondary-font);
   font-size: 1.6rem;
@@ -59,21 +60,22 @@ export default {
 }
 
 .primary {
-  background: var(--blue-interactive);
+  background: var(--accent-color);
 }
 .secondary {
-  background: var(--orange-active-book);
+  border: 0.2rem solid var(--accent-color);
+  color: var(--accent-color);
 }
 
 .tertiary {
   width: 19.2rem;
-  background: var(--gray);
-  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.25);
+  border: 0.2rem solid var(--white);
 }
 .rounded {
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 4.8rem;
+  height: 4.8rem;
+  box-shadow: none;
 }
 
 @media (min-width: 768px) {
@@ -83,6 +85,10 @@ export default {
 
   .tertiary {
     height: 7rem;
+  }
+
+  .rounded {
+    width: 4.8rem;
   }
 }
 </style>
