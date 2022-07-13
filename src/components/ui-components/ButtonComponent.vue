@@ -48,8 +48,9 @@ export default {
 
 <style scoped>
 .btn {
-  width: 11.2rem;
   height: 4rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
   border-radius: 0.8rem;
   border: none;
   background: transparent;

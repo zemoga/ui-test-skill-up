@@ -2,10 +2,12 @@
   <div class="propose-book-form-container">
     <MainHeader></MainHeader>
     <div class="propose-book-container">
-      <h2 class="propose-book__title">Book's information</h2>
-      <span class="propose-book__description text-m"
-        >Fill this form to propose your book
-      </span>
+      <div class="propose-book-info-container">
+        <h2 class="propose-book__title">Book's information</h2>
+        <span class="propose-book__description text-m my-1"
+          >Fill this form to propose your book
+        </span>
+      </div>
 
       <form @submit="submitForm" class="form-container">
         <FormLabel id="title">
@@ -59,7 +61,7 @@
             <textarea
               type="text"
               id="synopsis"
-              placeholder="Write a short synopsis about this book... &#10;&#10;500 characters max."
+              placeholder="Write a short synopsis about this book... &#10;What makes it interesting? &#10;&#10;&#10;500 characters max."
               maxlength="500"
               required
               class="label__input label__input--extended"
@@ -68,15 +70,21 @@
           </template>
         </FormLabel>
 
-        <button type="submit" :disabled="buttonDisable">
+        <ButtonBC
+          type="submit"
+          :disabled="buttonDisable"
+          variant="primary"
+          class="submit-button"
+        >
           Let's propose this book!
-        </button>
+          <v-icon name="hi-solid-arrow-narrow-right" class="icon-arrow-right" />
+        </ButtonBC>
+        <div class="propose-book__final--note">
+          <p class="text-xs">
+            Remember! you can only propose one book each month
+          </p>
+        </div>
       </form>
-      <div class="propose-book__final--note">
-        <p class="text-xs">
-          Remember, you can only propose one book each month
-        </p>
-      </div>
     </div>
   </div>
 </template>
@@ -84,12 +92,14 @@
 <script>
 import FormLabel from "../components/FormLabel.vue";
 import MainHeader from "../components/MainHeader.vue";
+import ButtonBC from "../components/ui-components/ButtonComponent.vue";
 
 export default {
   name: "ProposeBookForm",
   components: {
     FormLabel,
     MainHeader,
+    ButtonBC,
   },
 
   data() {
@@ -120,26 +130,24 @@ export default {
 </script>
 
 <style scoped>
+.propose-book-form-container {
+  padding: 1.7rem;
+  height: 100%;
+}
 .propose-book-container {
-  padding: 1.6rem;
-  border: solid 2px rgb(162, 160, 160);
+  min-height: 75vh;
+  padding: 1.4rem;
   border-radius: 8px;
-  background-color: rgb(214, 213, 213);
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.propose-book__final--note {
-  padding: 1rem 2.6rem;
-  border: solid 2px rgb(162, 160, 160);
-  border-radius: 8px;
-  min-height: 54px;
-  width: 84%;
-  text-align: center;
-  text-justify: center;
-  margin-top: 1.5rem;
-  background-color: white;
+.propose-book-info-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .form-container {
   width: 100%;
@@ -147,13 +155,18 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-
-button {
-  margin-top: 1.5rem;
+.propose-book__final--note {
+  width: 70%;
+  text-align: center;
+  margin-top: 1.6rem;
 }
-
-.propose-book-form-container {
-  padding: 1.7rem;
-  height: 100vh;
+.submit-button {
+  margin-top: 4rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.icon-arrow-right {
+  margin-left: 1rem;
 }
 </style>
+
+box-shadow:

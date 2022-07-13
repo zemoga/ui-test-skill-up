@@ -31,6 +31,7 @@ export default {
   flex-direction: column;
 }
 .label__description {
-  font-weight: bold;
+  font-family: var(--secondary-font);
+  font-weight: 700;
 }
 </style>
