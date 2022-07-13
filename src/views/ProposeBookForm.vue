@@ -1,6 +1,7 @@
 <template>
-  <div class="propose-book-form-container">
-    <MainHeader></MainHeader>
+  <MainHeader></MainHeader>
+
+  <main>
     <div class="propose-book-container">
       <div class="propose-book-info-container">
         <h2 class="propose-book__title">Book's information</h2>
@@ -79,6 +80,7 @@
           Let's propose this book!
           <v-icon name="hi-solid-arrow-narrow-right" class="icon-arrow-right" />
         </ButtonBC>
+
         <div class="propose-book__final--note">
           <p class="text-xs">
             Remember! you can only propose one book each month
@@ -86,7 +88,7 @@
         </div>
       </form>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -130,9 +132,11 @@ export default {
 </script>
 
 <style scoped>
-.propose-book-form-container {
-  padding: 1.7rem;
-  height: 100%;
+header {
+  padding: 1.7rem 1.7rem 0 1.7rem;
+}
+main {
+  padding: 0 1.7rem 1.7rem 1.7rem;
 }
 .propose-book-container {
   min-height: 75vh;
