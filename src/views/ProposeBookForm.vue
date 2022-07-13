@@ -62,7 +62,7 @@
             <textarea
               type="text"
               id="synopsis"
-              placeholder="Write a short synopsis about this book... &#10;What makes it interesting? &#10;&#10;&#10;500 characters max."
+              placeholder="Write a short synopsis about this book... &#10;What does make it interesting? &#10;&#10;&#10;500 characters max."
               maxlength="500"
               required
               class="label__input label__input--extended"
