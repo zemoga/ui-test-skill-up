@@ -54,7 +54,7 @@ export default {
   display: flex;
   gap: 1.6rem;
   width: 100%;
-  height: 18.3rem;
+  height: 19rem;
   margin: 1.7rem 0 2rem;
   overflow-x: scroll;
   scrollbar-width: none;
