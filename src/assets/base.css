@@ -36,6 +36,8 @@
   --tertiary-color: #2C2D37;
   --quaternary-color: #C6C6C6;
   --accent-color: #EB405F;
+  --light-gray-color: #C6C6C6; 
+  --gray-color: #8D8D8D; 
   --primary-font: 'Helvetica Neue', sans-serif;
   --secondary-font: 'Space Grotesk', sans-serif;
 }
@@ -67,7 +69,7 @@ body {
 }
 
 .my-1 {
-  margin-top:0.8rem;
+  margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
 
@@ -304,8 +306,8 @@ body {
 
 /* Font sizes */
 .text-xs {
-  font-size: 1.2rem;
-  line-height: 1.5rem;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
 }
 
 .text-s {
@@ -338,6 +340,7 @@ h2 {
   font-size: 2.4rem;
   line-height: 3.1rem;
   font-family: var(--secondary-font);
+  font-weight: 700;
 }
 
 h3 {
@@ -368,33 +371,38 @@ h3 {
 }
 
 /* Form input classes */
-input::placeholder {
-  text-transform: none;
-}
-
 .label__input--caps {
   text-transform: uppercase;
 }
 
 .label__input--extended {
-  min-height: 109px;
+  min-height: 110px;
   text-transform: none;
   resize: none;
 }
 
 .label__input {
-  border: solid 2px black;
+  border: solid 2px var(--light-gray-color);
   border-radius: 8px;
-  color: black;
   width: 100%;
   box-sizing: border-box;
-  font-size: 1.4rem;
+  font-family: var(--primary-font);
+  font-size: 1.5rem;
+  color: black;
   line-height: 1.7rem;
-  margin-top: 0.6rem;
+  margin-top: 0.8rem;
   padding: 0.8rem 1.6rem;
 }
 
-/*This class shortens long titles to two lines*/
+input::placeholder {
+  text-transform: none;
+  color: var(--gray-color)
+}
+
+textarea::placeholder {
+  color:var(--gray-color);  
+}
+/*This class shortens any long titles or author names to two lines*/
 .line-clamp {
   display: -webkit-box;
   -webkit-line-clamp: 2;
