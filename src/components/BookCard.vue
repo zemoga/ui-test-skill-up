@@ -1,20 +1,18 @@
 <template>
   <div class="book-card px-5 py-5">
     <div class="book-card__info">
-      <p
-        class="book-card__info--title line-clamp text-m font-semibold uppercase"
-      >
+      <p class="book-card__info--title line-clamp text-xl font-semibold">
         {{ book.title }}
       </p>
-      <h4 class="book-card__info--author line-clamp font-normal uppercase">
+      <p class="book-card__info--author one-line-clamp text-l font-normal">
         {{ book.author }}
-      </h4>
+      </p>
     </div>
     <div class="book-card__footer">
       <v-icon name="bi-book" scale="3" class="book-icon" />
       <div class="book-card__participants">
-        <p class="book-card__participants--text text-s uppercase">
-          {{ book.participants }} interested
+        <p class="book-card__participants--text text-s">
+          {{ book.participants }} Interested
         </p>
         <button-bc class="font-medium vote-btn" variant="secondary">
           Vote<v-icon
@@ -53,8 +51,8 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   flex-shrink: 0;
-  width: 25.3rem;
-  min-height: 18.3rem;
+  width: 25.5rem;
+  min-height: 19rem;
   background: var(--white);
   border-radius: 0.8rem;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
@@ -65,8 +63,7 @@ export default {
 }
 
 .book-card__info--author {
-  font-size: 1.5rem;
-  line-height: 1.8rem;
+  color: var(--quaternary-color);
 }
 
 .book-card__footer {

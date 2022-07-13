@@ -34,6 +34,7 @@
   --primary-color: #7258D7;
   --secondary-color: #1B0E45;
   --tertiary-color: #2C2D37;
+  --quaternary-color: #C6C6C6;
   --accent-color: #EB405F;
   --primary-font: 'Helvetica Neue', sans-serif;
   --secondary-font: 'Space Grotesk', sans-serif;
@@ -322,6 +323,11 @@ body {
   line-height: 2.2rem;
 }
 
+.text-xl {
+  font-size: 2rem;
+  line-height: 2.4rem;
+}
+
 h1 {
   font-size: 3.6rem;
   line-height: 4.6rem;
@@ -388,7 +394,7 @@ input::placeholder {
   padding: 0.8rem 1.6rem;
 }
 
-/*This class shortens any long titles or author names to two lines*/
+/*This class shortens long titles to two lines*/
 .line-clamp {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -397,7 +403,11 @@ input::placeholder {
   text-overflow: ellipsis;
 }
 
-/*Uppercase text*/
-.uppercase {
-  text-transform: uppercase;
+/*This class shortens author names to one line*/
+.one-line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

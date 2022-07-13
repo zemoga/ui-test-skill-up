@@ -58,6 +58,7 @@ export default {
   font-family: var(--secondary-font);
   font-size: 1.6rem;
   color: var(--white);
+  cursor: pointer;
 }
 
 .primary {
