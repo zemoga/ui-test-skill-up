@@ -58,6 +58,7 @@ export default {
   font-family: var(--secondary-font);
   font-size: 1.6rem;
   color: var(--white);
+  cursor: pointer;
 }
 
 .primary {
@@ -69,7 +70,6 @@ export default {
 }
 
 .tertiary {
-  width: 19.2rem;
   border: 0.2rem solid var(--white);
 }
 .rounded {
@@ -80,16 +80,8 @@ export default {
 }
 
 @media (min-width: 768px) {
-  .btn {
-    width: 34.3rem;
-  }
-
   .tertiary {
     height: 7rem;
-  }
-
-  .rounded {
-    width: 4.8rem;
   }
 }
 </style>
