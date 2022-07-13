@@ -69,7 +69,7 @@ body {
 }
 
 .my-1 {
-  margin-top:0.8rem;
+  margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
 
@@ -394,7 +394,15 @@ h3 {
   padding: 0.8rem 1.6rem;
 }
 
-/*This class shortens long titles to two lines*/
+input::placeholder {
+  text-transform: none;
+  color: var(--gray-color)
+}
+
+textarea::placeholder {
+  color:var(--gray-color);  
+}
+/*This class shortens any long titles or author names to two lines*/
 .line-clamp {
   display: -webkit-box;
   -webkit-line-clamp: 2;

@@ -1,5 +1,5 @@
 <template>
-  <MainHeader></MainHeader>
+  <MainHeader class="main-header"></MainHeader>
 
   <main>
     <div class="propose-book-container">
@@ -132,7 +132,7 @@ export default {
 </script>
 
 <style scoped>
-header {
+.main-header {
   padding: 1.7rem 1.7rem 0 1.7rem;
 }
 main {
