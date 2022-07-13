@@ -77,6 +77,7 @@ export default {
   width: 4.8rem;
   height: 4.8rem;
   box-shadow: none;
+  padding: 0.1rem;
 }
 
 @media (min-width: 768px) {

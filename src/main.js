@@ -4,19 +4,19 @@ import App from "./App.vue";
 import router from "./router";
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import {
-  BiArrowLeft,
+  OiArrowLeft,
   HiSolidArrowNarrowRight,
-  HiCheck,
+  HiSolidCheck,
   IoSearch,
   BiBook,
   HiSolidPlus,
 } from "oh-vue-icons/icons";
 
 addIcons(
-  BiArrowLeft,
+  OiArrowLeft,
   HiSolidArrowNarrowRight,
   HiSolidPlus,
-  HiCheck,
+  HiSolidCheck,
   IoSearch,
   BiBook
 );

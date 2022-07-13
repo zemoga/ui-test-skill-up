@@ -1,16 +1,24 @@
 <template>
-  <section class="container proposed-books">
-    <ProposedBooksList></ProposedBooksList>
-  </section>
+  <MainHeader></MainHeader>
+  <main>
+    <section class="container proposed-books">
+      <ProposedBooksList></ProposedBooksList>
+    </section>
+  </main>
 </template>
 
 <script>
 import ProposedBooksList from "@/components/ProposedBooksList.vue";
+import MainHeader from "../components/MainHeader.vue";
 
 export default {
   name: "HomeView",
   components: {
     ProposedBooksList,
+    MainHeader,
+  },
+  data() {
+    return {};
   },
 };
 </script>
@@ -22,6 +30,6 @@ export default {
 }
 
 .proposed-books {
-  padding: 1rem 0 1rem 1.6rem;
+  padding: 1rem 0 1rem 1.5rem;
 }
 </style>
