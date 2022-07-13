@@ -2,11 +2,16 @@
   <h2 class="title">Proposed books</h2>
   <p class="info">Proposed books for this month</p>
   <div class="carousel">
-    <BookCard v-for="book in books" :key="book.id" :book="book"></BookCard>
+    <BookCard v-for="book in topBooks" :key="book.id" :book="book"></BookCard>
   </div>
   <div class="btns-container">
-    <button-bc></button-bc>
-    <button-bc></button-bc>
+    <button-bc class="font-bold" @click="showAllBooks"></button-bc>
+    <button-bc class="font-bold propose-btn" variant="tertiary">
+      Propose a book<v-icon
+        name="hi-solid-arrow-narrow-right"
+        class="arrow-right-icon"
+      />
+    </button-bc>
   </div>
 </template>
 
@@ -26,13 +31,28 @@ export default {
       books: fakeBooks,
     };
   },
+  methods: {
+    showAllBooks() {
+      this.$router.push("proposed-books-list");
+    },
+  },
+  computed: {
+    topBooks() {
+      const booksCopy = [...this.books];
+      const sortedBooks = booksCopy.sort((a, b) => {
+        return b.participants - a.participants;
+      });
+
+      return sortedBooks.slice(0, 5);
+    },
+  },
 };
 </script>
 
 <style>
 .carousel {
   display: flex;
-  gap: 1.3rem;
+  gap: 1.6rem;
   width: 100%;
   height: 18.3rem;
   margin: 1.7rem 0 2rem;
@@ -42,5 +62,13 @@ export default {
 
 .carousel::-webkit-scrollbar {
   display: none;
+}
+
+.propose-btn {
+  margin-left: 0.8rem;
+}
+
+.arrow-right-icon {
+  margin-left: 0.8rem;
 }
 </style>
