@@ -1,6 +1,11 @@
 <template>
   <header class="header-container my-7">
-    <ButtonBC class="mx-5" variant="rounded" @click="this.$router.go(-1)">
+    <ButtonBC
+      class="mx-5"
+      variant="rounded"
+      @click="this.$router.go(-1)"
+      v-show="displayBtn"
+    >
       <v-icon name="oi-arrow-left" scale="2" fill="white" />
     </ButtonBC>
     <img
@@ -21,6 +26,12 @@ export default {
   },
   data() {
     return {};
+  },
+  props: {
+    displayBtn: {
+      type: Boolean,
+      default: true,
+    },
   },
 };
 </script>

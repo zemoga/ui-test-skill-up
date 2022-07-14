@@ -1,5 +1,5 @@
 <template>
-  <MainHeader></MainHeader>
+  <MainHeader :displayBtn="displayBtn"></MainHeader>
   <main>
     <section class="container proposed-books">
       <ProposedBooksList></ProposedBooksList>
@@ -18,7 +18,9 @@ export default {
     MainHeader,
   },
   data() {
-    return {};
+    return {
+      displayBtn: false,
+    };
   },
 };
 </script>
