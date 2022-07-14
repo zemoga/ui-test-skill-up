@@ -17,7 +17,7 @@
             <input
               type="text"
               id="title"
-              placeholder="Type book's title"
+              placeholder="Type your book's title"
               maxlength="150"
               required
               class="label__input label__input--caps"
@@ -32,7 +32,7 @@
             <input
               type="text"
               id="author"
-              placeholder="Type author's full name"
+              placeholder="Type author's name"
               maxlength="100"
               required
               class="label__input label__input--caps"
@@ -62,7 +62,7 @@
             <textarea
               type="text"
               id="synopsis"
-              placeholder="Write a short synopsis about this book... &#10;What does make it interesting? &#10;&#10;&#10;500 characters max."
+              placeholder="Type a short synopsis about this book... &#10;What does make it interesting? &#10;&#10;&#10;500 characters max."
               maxlength="500"
               required
               class="label__input label__input--extended"

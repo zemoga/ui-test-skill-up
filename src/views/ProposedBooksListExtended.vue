@@ -46,12 +46,11 @@ export default {
 <style scoped>
 .proposed-books-info-container {
   height: 100%;
-  padding: 1.6rem 1.6rem 0 1.6rem;
+  padding: 0 1.6rem 0 1.6rem;
   position: sticky;
   top: 0;
   z-index: 2;
-  background: linear-gradient(159.39deg, #1b0e45 -92.04%, #7258d7 106.82%);
-  /* background: inherit; */
+  background: linear-gradient(159.39deg, #1b0e45 -86.04%, #7258d7 167.82%);
 }
 
 .proposed-books-info__title {
@@ -60,7 +59,7 @@ export default {
 .proposed-books-info__description {
   display: inline-block;
   margin-top: 0.6rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.8rem;
   color: var(--white);
 }
 .proposed-books-list {

@@ -5,7 +5,7 @@
       primary: isPrimary,
       secondary: isSecondary,
       tertiary: isTertiary,
-      rounded: isRounded,
+      arrow: isAnArrow,
     }"
   >
     <slot>Show all</slot>
@@ -20,7 +20,7 @@ export default {
       type: String,
       default: "primary",
       validator: (propValue) => {
-        return ["primary", "secondary", "tertiary", "rounded"].includes(
+        return ["primary", "secondary", "tertiary", "arrow"].includes(
           propValue
         );
       },
@@ -39,8 +39,8 @@ export default {
     isTertiary() {
       return this.variant === "tertiary";
     },
-    isRounded() {
-      return this.variant === "rounded";
+    isAnArrow() {
+      return this.variant === "arrow";
     },
   },
 };
@@ -72,12 +72,11 @@ export default {
 .tertiary {
   border: 0.2rem solid var(--white);
 }
-.rounded {
-  border-radius: 50%;
-  width: 4.8rem;
-  height: 4.8rem;
+.arrow {
   box-shadow: none;
-  padding: 0.1rem;
+  padding: 0;
+  margin: 0;
+  justify-self: left;
 }
 
 @media (min-width: 768px) {

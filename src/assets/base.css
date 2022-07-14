@@ -395,7 +395,8 @@ h3 {
 
 input::placeholder {
   text-transform: none;
-  color: var(--gray-color)
+  color: var(--gray-color);
+  font-family: var(--primary-font);
 }
 
 textarea::placeholder {
