@@ -6,7 +6,11 @@
   </div>
   <div class="btns-container">
     <button-bc class="font-bold" @click="showAllBooks"></button-bc>
-    <button-bc class="font-bold propose-btn" variant="tertiary">
+    <button-bc
+      class="font-bold propose-btn"
+      variant="tertiary"
+      @click="proposeBook"
+    >
       Propose a book<v-icon
         name="hi-solid-arrow-narrow-right"
         class="arrow-right-icon"
@@ -33,7 +37,10 @@ export default {
   },
   methods: {
     showAllBooks() {
-      // this.$router.push("proposed-books-list");
+      this.$router.push("proposed-books-list");
+    },
+    proposeBook() {
+      this.$router.push("propose-book-form");
     },
   },
   computed: {
