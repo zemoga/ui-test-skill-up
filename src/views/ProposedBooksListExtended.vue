@@ -1,10 +1,12 @@
 <template>
-  <div class="proposed-books-list-container">
+  <div class="proposed-books-info-container">
     <MainHeader></MainHeader>
-    <h2 class="proposed-books-list__title">Proposed books</h2>
-    <span class="proposed-books-list__description text-m"
+    <h2 class="proposed-books-info__title">Proposed books</h2>
+    <span class="proposed-books-info__description text-m"
       >Find here the list with all proposed books
     </span>
+  </div>
+  <div class="proposed-books-list">
     <BookCard
       v-for="(book, id) in booksInfoSorted"
       :key="id"
@@ -42,18 +44,26 @@ export default {
 </script>
 
 <style scoped>
-.proposed-books-list-container {
-  padding: 1.6rem;
-  height: 100vh;
+.proposed-books-info-container {
+  height: 100%;
+  padding: 1.6rem 1.6rem 0 1.6rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: linear-gradient(159.39deg, #1b0e45 -92.04%, #7258d7 106.82%);
+  /* background: inherit; */
 }
 
-.proposed-books-list__title {
+.proposed-books-info__title {
   color: var(--white);
 }
-.proposed-books-list__description {
+.proposed-books-info__description {
   display: inline-block;
   margin-top: 0.6rem;
   margin-bottom: 2.4rem;
   color: var(--white);
+}
+.proposed-books-list {
+  padding: 0 1.6rem 1.6rem 1.6rem;
 }
 </style>
