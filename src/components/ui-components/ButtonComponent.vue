@@ -77,11 +77,18 @@ export default {
   width: 4.8rem;
   height: 4.8rem;
   box-shadow: none;
+  padding: 0.1rem;
 }
 
 @media (min-width: 768px) {
+  .btn {
+    padding-left: 13.15rem;
+    padding-right: 13.15rem;
+  }
+
   .tertiary {
-    height: 7rem;
+    padding-left: 8.5rem;
+    padding-right: 8.5rem;
   }
 }
 </style>
