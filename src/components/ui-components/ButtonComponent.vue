@@ -81,8 +81,14 @@ export default {
 }
 
 @media (min-width: 768px) {
+  .btn {
+    padding-left: 13.15rem;
+    padding-right: 13.15rem;
+  }
+
   .tertiary {
-    height: 7rem;
+    padding-left: 8.5rem;
+    padding-right: 8.5rem;
   }
 }
 </style>

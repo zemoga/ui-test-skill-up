@@ -10,7 +10,7 @@
     </ButtonBC>
     <img
       class="header__logo"
-      src="./icons/media-monk-logo-mobile.svg"
+      src="./icons/media-monks-logo-desktop.svg"
       alt="Media Monks logo"
     />
   </header>
@@ -47,5 +47,12 @@ export default {
 .header__logo {
   grid-column: 2 / 3;
   justify-self: center;
+  width: 18.1rem;
+}
+
+@media (min-width: 768px) {
+  .header__logo {
+    width: 24.8rem;
+  }
 }
 </style>
