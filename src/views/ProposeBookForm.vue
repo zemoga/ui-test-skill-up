@@ -160,9 +160,11 @@ main {
   align-items: center;
 }
 .propose-book__final--note {
-  width: 70%;
+  width: 65%;
   text-align: center;
   margin-top: 1.6rem;
+  font-weight: 400;
+  font-family: var(--secondary-font);
 }
 .submit-button {
   margin-top: 4rem;
@@ -172,5 +174,3 @@ main {
   margin-left: 1rem;
 }
 </style>
-
-box-shadow:
