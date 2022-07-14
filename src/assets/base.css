@@ -34,7 +34,7 @@
   --primary-color: #7258D7;
   --secondary-color: #1B0E45;
   --tertiary-color: #2C2D37;
-  --quaternary-color: #C6C6C6;
+  --quaternary-color: #C0B9B0;
   --accent-color: #EB405F;
   --light-gray-color: #C6C6C6; 
   --gray-color: #8D8D8D; 
@@ -340,7 +340,6 @@ h2 {
   font-size: 2.4rem;
   line-height: 3.1rem;
   font-family: var(--secondary-font);
-  font-weight: 700;
 }
 
 h3 {

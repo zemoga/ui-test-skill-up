@@ -1,14 +1,19 @@
 <template>
-  <div class="header-container">
-    <ButtonBC variant="rounded" @click="this.$router.go(-1)"
-      ><img src="./icons/arrow-left.svg" alt="←"
-    /></ButtonBC>
+  <header class="header-container my-7">
+    <ButtonBC
+      class="mx-5"
+      variant="rounded"
+      @click="this.$router.go(-1)"
+      v-show="displayBtn"
+    >
+      <v-icon name="oi-arrow-left" scale="2" fill="white" />
+    </ButtonBC>
     <img
       class="header__logo"
-      src="../images/mediamonks.png"
+      src="./icons/media-monks-logo-desktop.svg"
       alt="Media Monks logo"
     />
-  </div>
+  </header>
 </template>
 
 <script>
@@ -19,6 +24,15 @@ export default {
   components: {
     ButtonBC,
   },
+  data() {
+    return {};
+  },
+  props: {
+    displayBtn: {
+      type: Boolean,
+      default: true,
+    },
+  },
 };
 </script>
 <style scoped>
@@ -27,11 +41,18 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   align-items: center;
-  margin-bottom: 2.4rem;
+  height: 6rem;
 }
 
 .header__logo {
-  width: 145px;
-  height: 40px;
+  grid-column: 2 / 3;
+  justify-self: center;
+  width: 18.1rem;
+}
+
+@media (min-width: 768px) {
+  .header__logo {
+    width: 24.8rem;
+  }
 }
 </style>

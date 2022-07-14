@@ -1,7 +1,7 @@
 <template>
   <h2 class="title">Proposed books</h2>
-  <p class="info">Proposed books for this month</p>
-  <div class="carousel">
+  <p class="info text-m font-normal">Vote for the books you want to read</p>
+  <div class="carousel my-5">
     <BookCard v-for="book in topBooks" :key="book.id" :book="book"></BookCard>
   </div>
   <div class="btns-container">
@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     showAllBooks() {
-      this.$router.push("proposed-books-list");
+      // this.$router.push("proposed-books-list");
     },
   },
   computed: {
@@ -49,13 +49,21 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.title {
+  margin-bottom: 0.6rem;
+  color: var(--white);
+}
+
+.info {
+  color: var(--white);
+}
+
 .carousel {
   display: flex;
   gap: 1.6rem;
   width: 100%;
   height: 19rem;
-  margin: 1.7rem 0 2rem;
   overflow-x: scroll;
   scrollbar-width: none;
 }
