@@ -51,7 +51,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   flex-shrink: 0;
-  width: 25.5rem;
+  width: 27rem;
   min-height: 19rem;
   background: var(--white);
   border-radius: 0.8rem;
@@ -98,8 +98,7 @@ export default {
 
 @media (min-width: 768px) {
   .book-card {
-    width: 34.3rem;
-    padding: 1.8rem;
+    padding: 2.4rem;
   }
 
   .vote-btn {
