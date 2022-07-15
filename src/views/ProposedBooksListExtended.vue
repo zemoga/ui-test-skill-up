@@ -6,7 +6,7 @@
       >Find here the list with all proposed books
     </span>
   </div>
-  <div class="proposed-books-list">
+  <div class="proposed-books-list px-5">
     <BookCard
       v-for="(book, id) in booksInfoSorted"
       :key="id"
@@ -62,7 +62,7 @@ export default {
   color: var(--white);
 }
 .proposed-books-list {
-  padding: 0 1.6rem 1.6rem 1.6rem;
+  padding-bottom: 1.6rem;
   background-color: var(--secondary-background-color);
 }
 </style>

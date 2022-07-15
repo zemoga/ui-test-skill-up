@@ -1,7 +1,7 @@
 <template>
-  <MainHeader class="main-header"></MainHeader>
+  <MainHeader class="main-header px-5"></MainHeader>
 
-  <main>
+  <main class="px-5">
     <div class="propose-book-container">
       <div class="propose-book-info-container">
         <h2 class="propose-book__title">Book's information</h2>
@@ -133,10 +133,10 @@ export default {
 
 <style scoped>
 .main-header {
-  padding: 1.7rem 1.7rem 0 1.7rem;
+  padding-top: 1.6rem;
 }
 main {
-  padding: 0 1.7rem 1.7rem 1.7rem;
+  padding-bottom: 1.6rem;
 }
 .propose-book-container {
   min-height: 75vh;
