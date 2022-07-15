@@ -2,7 +2,7 @@
   <header class="header-container my-7">
     <ButtonBC
       class="mx-5"
-      variant="rounded"
+      variant="arrow"
       @click="this.$router.go(-1)"
       v-show="displayBtn"
     >
@@ -46,7 +46,7 @@ export default {
 
 .header__logo {
   grid-column: 2 / 3;
-  justify-self: center;
+  justify-self: left;
   width: 18.1rem;
 }
 

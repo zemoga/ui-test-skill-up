@@ -38,6 +38,7 @@
   --accent-color: #EB405F;
   --light-gray-color: #C6C6C6; 
   --gray-color: #8D8D8D; 
+  --secondary-background-color:#6049B9;
   --primary-font: 'Helvetica Neue', sans-serif;
   --secondary-font: 'Space Grotesk', sans-serif;
 }
@@ -395,7 +396,8 @@ h3 {
 
 input::placeholder {
   text-transform: none;
-  color: var(--gray-color)
+  color: var(--gray-color);
+  font-family: var(--primary-font);
 }
 
 textarea::placeholder {

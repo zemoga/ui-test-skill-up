@@ -1,12 +1,14 @@
 <template>
-  <div class="proposed-books-list-container">
+  <div class="proposed-books-info-container px-5">
     <MainHeader></MainHeader>
-    <h2 class="proposed-books-list__title">Proposed books</h2>
-    <span class="proposed-books-list__description text-m"
+    <h2 class="proposed-books-info__title">Proposed books</h2>
+    <span class="proposed-books-info__description text-m"
       >Find here the list with all proposed books
     </span>
+  </div>
+  <div class="proposed-books-list px-5">
     <BookCard
-      v-for="(book, id) in booksInfo"
+      v-for="(book, id) in booksInfoSorted"
       :key="id"
       :book="book"
       class="extended"
@@ -15,6 +17,7 @@
 </template>
 
 <script>
+import fakeBooks from "../assets/data.json";
 import MainHeader from "../components/MainHeader.vue";
 import BookCard from "../components/BookCard.vue";
 
@@ -26,42 +29,40 @@ export default {
   },
   data() {
     return {
-      booksInfo: [
-        {
-          title: "El principito",
-          author: "Antoine Marie Jean-Baptiste",
-        },
-        {
-          title: "El principito",
-          author: "Antoine Marie Jean-Baptiste",
-        },
-        {
-          title: "El principito",
-          author: "Antoine Marie Jean-Baptiste",
-        },
-        {
-          title: "El principito",
-          author: "Antoine Marie Jean-Baptiste",
-        },
-        {
-          title: "El principito",
-          author: "Antoine Marie Jean-Baptiste",
-        },
-      ],
+      booksInfo: fakeBooks,
     };
+  },
+  computed: {
+    booksInfoSorted() {
+      const booksCopy = [...this.booksInfo];
+      return booksCopy.sort(function (a, b) {
+        return b.participants - a.participants;
+      });
+    },
   },
 };
 </script>
 
 <style scoped>
-.proposed-books-list-container {
-  padding: 1.6rem;
-  height: 100vh;
+.proposed-books-info-container {
+  height: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: var(--secondary-background-color);
 }
 
-.proposed-books-list__description {
+.proposed-books-info__title {
+  color: var(--white);
+}
+.proposed-books-info__description {
   display: inline-block;
   margin-top: 0.6rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.8rem;
+  color: var(--white);
+}
+.proposed-books-list {
+  padding-bottom: 1.6rem;
+  background-color: var(--secondary-background-color);
 }
 </style>

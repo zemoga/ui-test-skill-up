@@ -1,7 +1,7 @@
 <template>
-  <MainHeader class="main-header"></MainHeader>
+  <MainHeader class="main-header px-5"></MainHeader>
 
-  <main>
+  <main class="px-5">
     <div class="propose-book-container">
       <div class="propose-book-info-container">
         <h2 class="propose-book__title">Book's information</h2>
@@ -17,7 +17,7 @@
             <input
               type="text"
               id="title"
-              placeholder="Type book's title"
+              placeholder="Type your book's title"
               maxlength="150"
               required
               class="label__input label__input--caps"
@@ -32,7 +32,7 @@
             <input
               type="text"
               id="author"
-              placeholder="Type author's full name"
+              placeholder="Type author's name"
               maxlength="100"
               required
               class="label__input label__input--caps"
@@ -62,7 +62,7 @@
             <textarea
               type="text"
               id="synopsis"
-              placeholder="Write a short synopsis about this book... &#10;What does make it interesting? &#10;&#10;&#10;500 characters max."
+              placeholder="Type a short synopsis about this book... &#10;What does make it interesting? &#10;&#10;&#10;500 characters max."
               maxlength="500"
               required
               class="label__input label__input--extended"
@@ -81,7 +81,7 @@
           <v-icon name="hi-solid-arrow-narrow-right" class="icon-arrow-right" />
         </ButtonBC>
 
-        <div class="propose-book__final--note">
+        <div class="propose-book__final--note font-normal">
           <p class="text-xs">
             Remember! you can only propose one book each month
           </p>
@@ -133,10 +133,10 @@ export default {
 
 <style scoped>
 .main-header {
-  padding: 1.7rem 1.7rem 0 1.7rem;
+  padding-top: 1.6rem;
 }
 main {
-  padding: 0 1.7rem 1.7rem 1.7rem;
+  padding-bottom: 1.6rem;
 }
 .propose-book-container {
   min-height: 75vh;
@@ -160,9 +160,10 @@ main {
   align-items: center;
 }
 .propose-book__final--note {
-  width: 70%;
+  width: 65%;
   text-align: center;
   margin-top: 1.6rem;
+  font-family: var(--secondary-font);
 }
 .submit-button {
   margin-top: 4rem;
@@ -172,5 +173,3 @@ main {
   margin-left: 1rem;
 }
 </style>
-
-box-shadow:

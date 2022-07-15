@@ -10,5 +10,6 @@
   flex-direction: column;
   min-height: 100vh;
   background: linear-gradient(159.39deg, #1b0e45 -92.04%, #7258d7 106.82%);
+  background-attachment: fixed;
 }
 </style>
