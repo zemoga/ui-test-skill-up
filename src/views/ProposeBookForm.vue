@@ -81,7 +81,7 @@
           <v-icon name="hi-solid-arrow-narrow-right" class="icon-arrow-right" />
         </ButtonBC>
 
-        <div class="propose-book__final--note">
+        <div class="propose-book__final--note font-normal">
           <p class="text-xs">
             Remember! you can only propose one book each month
           </p>
@@ -163,7 +163,6 @@ main {
   width: 65%;
   text-align: center;
   margin-top: 1.6rem;
-  font-weight: 400;
   font-family: var(--secondary-font);
 }
 .submit-button {

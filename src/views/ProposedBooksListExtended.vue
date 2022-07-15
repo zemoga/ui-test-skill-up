@@ -1,5 +1,5 @@
 <template>
-  <div class="proposed-books-info-container">
+  <div class="proposed-books-info-container px-5">
     <MainHeader></MainHeader>
     <h2 class="proposed-books-info__title">Proposed books</h2>
     <span class="proposed-books-info__description text-m"
@@ -46,11 +46,10 @@ export default {
 <style scoped>
 .proposed-books-info-container {
   height: 100%;
-  padding: 0 1.6rem 0 1.6rem;
   position: sticky;
   top: 0;
   z-index: 2;
-  background: linear-gradient(159.39deg, #1b0e45 -86.04%, #7258d7 167.82%);
+  background-color: var(--secondary-background-color);
 }
 
 .proposed-books-info__title {
@@ -64,5 +63,6 @@ export default {
 }
 .proposed-books-list {
   padding: 0 1.6rem 1.6rem 1.6rem;
+  background-color: var(--secondary-background-color);
 }
 </style>
