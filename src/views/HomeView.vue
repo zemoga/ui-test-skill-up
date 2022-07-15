@@ -2,19 +2,19 @@
   <MainHeader :displayBtn="displayBtn"></MainHeader>
   <main>
     <section class="container proposed-books">
-      <ProposedBooksList></ProposedBooksList>
+      <BooksList></BooksList>
     </section>
   </main>
 </template>
 
 <script>
-import ProposedBooksList from "@/components/ProposedBooksList.vue";
+import BooksList from "@/components/BooksList.vue";
 import MainHeader from "../components/MainHeader.vue";
 
 export default {
   name: "HomeView",
   components: {
-    ProposedBooksList,
+    BooksList,
     MainHeader,
   },
   data() {
@@ -32,6 +32,6 @@ export default {
 }
 
 .proposed-books {
-  padding: 1rem 0 1rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 </style>
