@@ -1,11 +1,6 @@
 <template>
   <header class="header-container my-7">
-    <ButtonBC
-      class="mx-5"
-      variant="arrow"
-      @click="this.$router.go(-1)"
-      v-show="displayBtn"
-    >
+    <ButtonBC class="mx-5" variant="arrow" @click="goBack" v-show="displayBtn">
       <v-icon name="oi-arrow-left" scale="2" fill="white" />
     </ButtonBC>
     <img
@@ -31,6 +26,11 @@ export default {
     displayBtn: {
       type: Boolean,
       default: true,
+    },
+  },
+  methods: {
+    goBack() {
+      this.$router.push("/");
     },
   },
 };
