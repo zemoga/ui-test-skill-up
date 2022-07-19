@@ -1,6 +1,6 @@
 <template>
   <header class="header-container my-7">
-    <ButtonBC class="mx-5" variant="arrow" @click="goBack" v-show="displayBtn">
+    <ButtonBC class="mx-5" variant="arrow" @click="goBack" v-if="displayBtn">
       <v-icon name="oi-arrow-left" scale="2" fill="white" />
     </ButtonBC>
     <img
