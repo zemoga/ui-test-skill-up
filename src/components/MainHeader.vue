@@ -5,7 +5,7 @@
     </ButtonBC>
     <img
       class="header__logo"
-      src="./icons/media-monks-logo-desktop.svg"
+      src="./icons/media-monks-logo.svg"
       alt="Media Monks logo"
     />
   </header>
