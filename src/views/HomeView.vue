@@ -34,4 +34,10 @@ export default {
 .proposed-books {
   padding: 1rem 1.5rem;
 }
+
+@media (min-width: 768px) {
+  .proposed-books {
+    padding: 1.8rem 3.3rem;
+  }
+}
 </style>

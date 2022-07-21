@@ -38,19 +38,25 @@ export default {
 <style scoped>
 .header-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 33%);
   grid-template-rows: 1fr;
+  justify-content: center;
   align-items: center;
   height: 6rem;
 }
 
 .header__logo {
   grid-column: 2 / 3;
-  justify-self: left;
+  justify-self: center;
   width: 18.1rem;
 }
 
 @media (min-width: 768px) {
+  .header-container {
+    height: 5.4rem;
+    margin-block: 5.2rem; /*Find out if we can do this with window resize*/
+    padding-inline: 2.8rem;
+  }
   .header__logo {
     width: 24.8rem;
   }

@@ -50,7 +50,11 @@ export default {
         return b.participants - a.participants;
       });
 
-      return sortedBooks.slice(0, 5);
+      if (window.innerWidth >= "1440") {
+        return sortedBooks.slice(0, 6);
+      } else {
+        return sortedBooks.slice(0, 5);
+      }
     },
   },
 };
@@ -85,5 +89,35 @@ export default {
 
 .arrow-right-icon {
   margin-left: 0.8rem;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 3.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info {
+    font-size: 1.8rem; /*Find out if we can do this with window resize*/
+    line-height: 2.2rem; /*Find out if we can do this with window resize*/
+  }
+
+  .carousel {
+    gap: 2.4rem;
+    height: 19rem;
+    margin-block: 2.4rem; /*Find out if we can do this with window resize*/
+  }
+}
+
+@media (min-width: 1440px) {
+  .btns-container {
+    position: absolute;
+    top: 4rem;
+    right: 3.3rem;
+  }
+
+  .propose-btn {
+    margin-left: 2.4rem;
+  }
 }
 </style>
