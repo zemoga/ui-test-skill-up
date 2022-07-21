@@ -4,6 +4,9 @@
     <section class="container proposed-books">
       <BooksList></BooksList>
     </section>
+    <section class="container proposed-books">
+      <BooksList :displayProposeBtn="displayProposeBtn"></BooksList>
+    </section>
   </main>
 </template>
 
@@ -22,6 +25,9 @@ export default {
       displayBtn: false,
       displayProposeBtn: false,
     };
+  },
+  provide: {
+    proposed: true,
   },
 };
 </script>

@@ -11,12 +11,12 @@
     <div class="book-card__footer">
       <v-icon name="bi-book" scale="3" class="book-icon" />
       <div class="book-card__participants">
-        <p class="book-card__participants--text text-s">
+        <p class="book-card__participants--text text-s" v-if="proposed">
           {{ book.participants }} Interested
         </p>
-        <!-- <p class="book-card__participants--text text-s">
+        <p class="book-card__participants--text text-s" v-else>
           {{ book.participants }} Readers
-        </p> -->
+        </p>
         <button-bc class="font-medium vote-btn" variant="secondary">
           Vote<v-icon
             name="hi-solid-plus"
@@ -36,6 +36,12 @@ import ButtonBC from "./ui-components/ButtonComponent.vue";
 
 export default {
   name: "BookCard",
+  inject: {
+    proposed: {
+      from: "proposed",
+      default: "false",
+    },
+  },
   components: {
     "button-bc": ButtonBC,
   },
