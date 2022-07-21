@@ -132,9 +132,6 @@ export default {
 </script>
 
 <style scoped>
-.main-header {
-  padding-top: 1.6rem;
-}
 main {
   padding-bottom: 1.6rem;
 }

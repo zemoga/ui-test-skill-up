@@ -38,7 +38,7 @@ export default {
 <style scoped>
 .header-container {
   display: grid;
-  grid-template-columns: repeat(3, 33%);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
