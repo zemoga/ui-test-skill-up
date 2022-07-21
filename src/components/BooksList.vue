@@ -10,6 +10,7 @@
       class="font-bold propose-btn"
       variant="tertiary"
       @click="proposeBook"
+      v-if="displayProposeBtn"
     >
       Propose a book<v-icon
         name="hi-solid-arrow-narrow-right"
@@ -34,6 +35,12 @@ export default {
     return {
       books: fakeBooks,
     };
+  },
+  props: {
+    displayProposeBtn: {
+      type: Boolean,
+      default: true,
+    },
   },
   methods: {
     showAllBooks() {

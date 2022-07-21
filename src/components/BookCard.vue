@@ -14,6 +14,9 @@
         <p class="book-card__participants--text text-s">
           {{ book.participants }} Interested
         </p>
+        <!-- <p class="book-card__participants--text text-s">
+          {{ book.participants }} Readers
+        </p> -->
         <button-bc class="font-medium vote-btn" variant="secondary">
           Vote<v-icon
             name="hi-solid-plus"

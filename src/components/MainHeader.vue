@@ -1,5 +1,5 @@
 <template>
-  <header class="header-container my-7">
+  <header class="header-container" :class="resizeClass">
     <ButtonBC class="mx-5" variant="arrow" @click="goBack" v-if="displayBtn">
       <v-icon name="oi-arrow-left" scale="2" fill="white" />
     </ButtonBC>
@@ -33,6 +33,15 @@ export default {
       this.$router.push("/");
     },
   },
+  computed: {
+    resizeClass() {
+      if (window.innerWidth >= "768") {
+        return "my-15";
+      } else {
+        return "my-7";
+      }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -54,7 +63,7 @@ export default {
 @media (min-width: 768px) {
   .header-container {
     height: 5.4rem;
-    margin-block: 5.2rem; /*Find out if we can do this with window resize*/
+    /*margin-block: 5.2rem; /*Find out if we can do this with window resize*/
     padding-inline: 2.8rem;
   }
   .header__logo {

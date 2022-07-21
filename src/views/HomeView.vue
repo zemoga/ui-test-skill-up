@@ -20,6 +20,7 @@ export default {
   data() {
     return {
       displayBtn: false,
+      displayProposeBtn: false,
     };
   },
 };
@@ -29,14 +30,11 @@ export default {
 .container {
   display: flex;
   flex-direction: column;
-}
-
-.proposed-books {
   padding: 1rem 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .proposed-books {
+  .container {
     padding: 1.8rem 3.3rem;
   }
 }
