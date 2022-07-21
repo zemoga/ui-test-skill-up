@@ -4,9 +4,6 @@
     <section class="container proposed-books">
       <BooksList></BooksList>
     </section>
-    <section class="container proposed-books">
-      <BooksList :displayProposeBtn="displayProposeBtn"></BooksList>
-    </section>
   </main>
 </template>
 
@@ -26,22 +23,34 @@ export default {
       displayProposeBtn: false,
     };
   },
-  provide: {
-    proposed: true,
-  },
 };
 </script>
 
-<style>
+<style scoped>
 .container {
   display: flex;
   flex-direction: column;
+}
+
+.proposed-books {
   padding: 1rem 1.5rem;
 }
 
 @media (min-width: 768px) {
   .container {
+    align-content: center;
+  }
+  .proposed-books {
     padding: 1.8rem 3.3rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  main {
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 151.5rem;
   }
 }
 </style>

@@ -57,11 +57,7 @@ export default {
         return b.participants - a.participants;
       });
 
-      if (window.innerWidth >= "1440") {
-        return sortedBooks.slice(0, 6);
-      } else {
-        return sortedBooks.slice(0, 5);
-      }
+      return sortedBooks.slice(0, 5);
     },
   },
 };
@@ -105,14 +101,14 @@ export default {
   }
 
   .info {
-    font-size: 1.8rem; /*Find out if we can do this with window resize*/
-    line-height: 2.2rem; /*Find out if we can do this with window resize*/
+    font-size: 1.8rem;
+    line-height: 2.2rem;
   }
 
   .carousel {
     gap: 2.4rem;
     height: 19rem;
-    margin-block: 2.4rem; /*Find out if we can do this with window resize*/
+    margin-block: 2.4rem;
   }
 }
 
