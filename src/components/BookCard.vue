@@ -17,17 +17,18 @@
         <p class="book-card__participants--text text-s">
           {{ book.participants }} Interested
         </p>
-        <!-- <p class="book-card__participants--text text-s" v-else>
-          {{ book.participants }} Readers
-        </p> -->
-        <button-bc class="font-medium vote-btn" variant="secondary">
-          Vote<v-icon
-            name="hi-solid-plus"
-            scale="0.8"
-            animation="wrench"
-            hover
-            class="plus-icon"
-          />
+        <button-bc
+          class="font-medium vote-btn"
+          variant="secondary"
+          @click="addVote"
+          :class="{ 'user-vote': userVote }"
+        >
+          <span v-if="!userVote">
+            Vote<v-icon name="hi-solid-plus" scale="0.8" class="icon" />
+          </span>
+          <span v-else>
+            Voted<v-icon name="hi-solid-check" scale="0.8" class="icon" />
+          </span>
         </button-bc>
       </div>
     </div>
@@ -42,10 +43,30 @@ export default {
   components: {
     "button-bc": ButtonBC,
   },
+  data() {
+    return {
+      userVote: false,
+    };
+  },
   props: {
     book: {
       type: Object,
       required: true,
+    },
+  },
+  methods: {
+    addVote() {
+      if (this.userVote == false) {
+        console.log("now i'm true");
+        const addParticipant = this.book.participants + 1;
+        console.log(addParticipant);
+        this.userVote = true;
+      } else {
+        console.log("now i'm false");
+        const currentParticipants = this.book.participants;
+        console.log(currentParticipants);
+        this.userVote = false;
+      }
     },
   },
 };
@@ -94,11 +115,13 @@ export default {
   margin: 0 0 1.6rem 0;
 }
 
-.vote-btn {
-  box-shadow: none;
+.user-vote {
+  border: none;
+  background: var(--accent-color);
+  color: var(--white);
 }
 
-.plus-icon {
+.icon {
   margin-left: 0.8rem;
 }
 
@@ -109,7 +132,7 @@ export default {
 
   .vote-btn {
     width: 10.8rem;
-    padding-inline: 2rem;
+    padding-inline: 1.9rem;
   }
 }
 </style>
