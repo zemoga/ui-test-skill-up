@@ -1,7 +1,10 @@
 <template>
   <div class="book-card px-5 py-5">
     <div class="book-card__info">
-      <p data-testid="title" class="book-card__info--title line-clamp text-xl font-semibold">
+      <p
+        data-testid="title"
+        class="book-card__info--title line-clamp text-xl font-semibold"
+      >
         {{ book.title }}
       </p>
       <p class="book-card__info--author one-line-clamp text-l font-normal">
@@ -14,6 +17,9 @@
         <p class="book-card__participants--text text-s">
           {{ book.participants }} Interested
         </p>
+        <!-- <p class="book-card__participants--text text-s" v-else>
+          {{ book.participants }} Readers
+        </p> -->
         <button-bc class="font-medium vote-btn" variant="secondary">
           Vote<v-icon
             name="hi-solid-plus"

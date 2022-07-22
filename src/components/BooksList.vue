@@ -10,6 +10,7 @@
       class="font-bold propose-btn"
       variant="tertiary"
       @click="proposeBook"
+      v-if="displayProposeBtn"
     >
       Propose a book<v-icon
         name="hi-solid-arrow-narrow-right"
@@ -34,6 +35,12 @@ export default {
     return {
       books: fakeBooks,
     };
+  },
+  props: {
+    displayProposeBtn: {
+      type: Boolean,
+      default: true,
+    },
   },
   methods: {
     showAllBooks() {
@@ -85,5 +92,35 @@ export default {
 
 .arrow-right-icon {
   margin-left: 0.8rem;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 3.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
+  .carousel {
+    gap: 2.4rem;
+    height: 19rem;
+    margin-block: 2.4rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .btns-container {
+    position: absolute;
+    top: 4rem;
+    right: 3.3rem;
+  }
+
+  .propose-btn {
+    margin-left: 2.4rem;
+  }
 }
 </style>

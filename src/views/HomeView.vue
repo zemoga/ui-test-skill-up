@@ -20,12 +20,13 @@ export default {
   data() {
     return {
       displayBtn: false,
+      displayProposeBtn: false,
     };
   },
 };
 </script>
 
-<style>
+<style scoped>
 .container {
   display: flex;
   flex-direction: column;
@@ -33,5 +34,23 @@ export default {
 
 .proposed-books {
   padding: 1rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    align-content: center;
+  }
+  .proposed-books {
+    padding: 1.8rem 3.3rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  main {
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 151.5rem;
+  }
 }
 </style>
