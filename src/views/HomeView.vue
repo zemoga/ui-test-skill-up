@@ -9,6 +9,15 @@
         </template>
       </BooksList>
     </section>
+
+    <section class="container active-clubs">
+      <BooksList :displayProposeBtn="false">
+        <template v-slot:title>Active clubs</template>
+        <template v-slot:description
+          >Find active book clubs and their members
+        </template>
+      </BooksList>
+    </section>
   </main>
 </template>
 
@@ -35,10 +44,10 @@ export default {
 .container {
   display: flex;
   flex-direction: column;
-}
-
-.proposed-books {
   padding: 1rem 1.5rem;
+}
+.active-clubs {
+  margin-top: 0.4rem;
 }
 
 @media (min-width: 768px) {
