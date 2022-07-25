@@ -52,7 +52,12 @@ export default {
   },
   methods: {
     showAllBooks() {
-      this.$router.push("proposed-books-list");
+      if (this.reader) {
+        //Pending to change router when the active clubs list view is done
+        this.$router.push("propose-book-form");
+      } else {
+        this.$router.push("proposed-books-list");
+      };
     },
     proposeBook() {
       this.$router.push("propose-book-form");
