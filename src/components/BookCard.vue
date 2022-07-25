@@ -1,5 +1,8 @@
 <template>
-  <div class="book-card px-5 py-5">
+  <div
+    class="book-card px-5 py-5"
+    @click.self="this.$router.push(`/book/${book.id}`)"
+  >
     <div class="book-card__info">
       <p
         data-testid="title"
@@ -37,6 +40,7 @@
 
 <script>
 import ButtonBC from "./ui-components/ButtonComponent.vue";
+// import EventService from "../services/EventService.js";
 
 export default {
   name: "BookCard",
@@ -54,6 +58,15 @@ export default {
       required: true,
     },
   },
+  // created() {
+  //   EventService.getBookProfile()
+  //     .then((response) => {
+  //       console.log("book:", response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // },
   methods: {
     addVote() {
       if (this.userVote == false) {
@@ -83,6 +96,7 @@ export default {
   background: var(--white);
   border-radius: 0.8rem;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .book-card__info--title {
