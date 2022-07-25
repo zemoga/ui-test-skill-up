@@ -2,7 +2,7 @@
   <MainHeader :displayBtn="displayBtn"></MainHeader>
   <main>
     <section class="container proposed-books">
-      <BooksList>
+      <BooksList :reader="false">
         <template v-slot:title>Proposed books</template>
         <template v-slot:description
           >Vote for the books you want to read
@@ -11,7 +11,7 @@
     </section>
 
     <section class="container active-clubs">
-      <BooksList :displayProposeBtn="false">
+      <BooksList :displayProposeBtn="false" :reader="true">
         <template v-slot:title>Active clubs</template>
         <template v-slot:description
           >Find active book clubs and their members

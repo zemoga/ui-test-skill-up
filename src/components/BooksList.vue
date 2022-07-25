@@ -2,7 +2,12 @@
   <h2 class="title"><slot name="title"></slot></h2>
   <p class="info text-m font-normal"><slot name="description"></slot></p>
   <div class="carousel my-5">
-    <BookCard v-for="book in topBooks" :key="book.id" :book="book"></BookCard>
+    <BookCard
+      v-for="book in topBooks"
+      :key="book.id"
+      :book="book"
+      :isReader="reader"
+    ></BookCard>
   </div>
   <div class="btns-container">
     <button-bc class="font-bold" @click="showAllBooks"></button-bc>
@@ -40,6 +45,10 @@ export default {
     displayProposeBtn: {
       type: Boolean,
       default: true,
+    },
+    reader: {
+      type: Boolean,
+      required: true,
     },
   },
   methods: {
