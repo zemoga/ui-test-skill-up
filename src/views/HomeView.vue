@@ -2,7 +2,7 @@
   <MainHeader :displayBtn="displayBtn"></MainHeader>
   <main>
     <section class="container proposed-books">
-      <BooksList :reader="false">
+      <BooksList :reader="false" :books="proposedBooks">
         <template v-slot:title>Proposed books</template>
         <template v-slot:description
           >Vote for the books you want to read
@@ -11,7 +11,7 @@
     </section>
 
     <section class="container active-clubs">
-      <BooksList :displayProposeBtn="false" :reader="true">
+      <BooksList :displayProposeBtn="false" :reader="true" :books="activeBooks">
         <template v-slot:title>Active clubs</template>
         <template v-slot:description
           >Find active book clubs and their members
@@ -24,6 +24,8 @@
 <script>
 import BooksList from "@/components/BooksList.vue";
 import MainHeader from "../components/MainHeader.vue";
+import fakeBooks from "../assets/data.json";
+import activeClubs from "../assets/activeData.json";
 
 export default {
   name: "HomeView",
@@ -35,6 +37,8 @@ export default {
     return {
       displayBtn: false,
       displayProposeBtn: false,
+      proposedBooks: fakeBooks,
+      activeBooks: activeClubs,
     };
   },
 };

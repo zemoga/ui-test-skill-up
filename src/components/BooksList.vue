@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import fakeBooks from "../assets/data.json";
 import BookCard from "./BookCard.vue";
 import ButtonBC from "./ui-components/ButtonComponent.vue";
 
@@ -36,11 +35,7 @@ export default {
     BookCard,
     "button-bc": ButtonBC,
   },
-  data() {
-    return {
-      books: fakeBooks,
-    };
-  },
+
   props: {
     displayProposeBtn: {
       type: Boolean,
@@ -48,6 +43,10 @@ export default {
     },
     reader: {
       type: Boolean,
+      required: true,
+    },
+    books: {
+      type: Array,
       required: true,
     },
   },
