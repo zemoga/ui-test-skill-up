@@ -1,6 +1,6 @@
 <template>
-  <h2 class="title">Proposed books</h2>
-  <p class="info text-m font-normal">Vote for the books you want to read</p>
+  <h2 class="title"><slot name="title"></slot></h2>
+  <p class="info text-m font-normal"><slot name="description"></slot></p>
   <div class="carousel my-5">
     <BookCard v-for="book in topBooks" :key="book.id" :book="book"></BookCard>
   </div>

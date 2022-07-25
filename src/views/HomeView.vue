@@ -2,7 +2,12 @@
   <MainHeader :displayBtn="displayBtn"></MainHeader>
   <main>
     <section class="container proposed-books">
-      <BooksList></BooksList>
+      <BooksList>
+        <template v-slot:title>Proposed books</template>
+        <template v-slot:description
+          >Vote for the books you want to read
+        </template>
+      </BooksList>
     </section>
   </main>
 </template>
