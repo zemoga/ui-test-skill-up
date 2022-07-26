@@ -10,7 +10,11 @@
     ></BookCard>
   </div>
   <div class="btns-container">
-    <button-bc class="font-bold" @click="showAllBooks"></button-bc>
+    <button-bc
+      class="font-bold"
+      variant="primary"
+      @click="showAllBooks"
+    ></button-bc>
     <button-bc
       class="font-bold propose-btn"
       variant="tertiary"
@@ -57,7 +61,7 @@ export default {
         this.$router.push("propose-book-form");
       } else {
         this.$router.push("proposed-books-list");
-      };
+      }
     },
     proposeBook() {
       this.$router.push("propose-book-form");

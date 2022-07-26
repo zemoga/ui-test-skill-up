@@ -29,12 +29,7 @@
           @click="addVote"
           :class="{ 'user-vote': userVote }"
         >
-          <span v-if="!userVote">
-            Vote<v-icon name="hi-solid-plus" scale="0.8" class="icon" />
-          </span>
-          <span v-else>
-            Voted<v-icon name="hi-solid-check" scale="0.8" class="icon" />
-          </span>
+          {{ textBtn }}
         </button-bc>
       </div>
     </div>
@@ -67,10 +62,14 @@ export default {
 
   computed: {
     textBtn() {
-      if (this.isReader) {
+      if (this.isReader && !this.userVote) {
         return "Join";
-      } else {
+      } else if (!this.isReader && !this.userVote) {
         return "Vote";
+      } else if (this.isReader && this.userVote) {
+        return "Joined";
+      } else {
+        return "Voted";
       }
     },
   },
