@@ -12,6 +12,7 @@
       :key="id"
       :book="book"
       class="extended"
+      :isReader="false"
     ></BookCard>
   </div>
 </template>
