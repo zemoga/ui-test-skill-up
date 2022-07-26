@@ -14,7 +14,10 @@
     <div class="book-card__footer">
       <v-icon name="bi-book" scale="3" class="book-icon" />
       <div class="book-card__participants">
-        <p class="book-card__participants--text text-s">
+        <p v-if="isReader" class="book-card__participants--text text-s">
+          {{ book.participants }} Readers
+        </p>
+        <p v-else class="book-card__participants--text text-s">
           {{ book.participants }} Interested
         </p>
         <button-bc
@@ -52,6 +55,20 @@ export default {
     book: {
       type: Object,
       required: true,
+    },
+    isReader: {
+      type: Boolean,
+      required: true,
+    },
+  },
+
+  computed: {
+    textBtn() {
+      if (this.isReader) {
+        return "Join";
+      } else {
+        return "Vote";
+      }
     },
   },
   methods: {

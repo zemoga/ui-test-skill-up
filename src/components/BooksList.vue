@@ -1,8 +1,13 @@
 <template>
-  <h2 class="title">Proposed books</h2>
-  <p class="info text-m font-normal">Vote for the books you want to read</p>
+  <h2 class="title"><slot name="title"></slot></h2>
+  <p class="info text-m font-normal"><slot name="description"></slot></p>
   <div class="carousel my-5">
-    <BookCard v-for="book in topBooks" :key="book.id" :book="book"></BookCard>
+    <BookCard
+      v-for="book in topBooks"
+      :key="book.id"
+      :book="book"
+      :isReader="reader"
+    ></BookCard>
   </div>
   <div class="btns-container">
     <button-bc class="font-bold" @click="showAllBooks"></button-bc>
@@ -21,7 +26,6 @@
 </template>
 
 <script>
-import fakeBooks from "../assets/data.json";
 import BookCard from "./BookCard.vue";
 import ButtonBC from "./ui-components/ButtonComponent.vue";
 
@@ -31,20 +35,29 @@ export default {
     BookCard,
     "button-bc": ButtonBC,
   },
-  data() {
-    return {
-      books: fakeBooks,
-    };
-  },
+
   props: {
     displayProposeBtn: {
       type: Boolean,
       default: true,
     },
+    reader: {
+      type: Boolean,
+      required: true,
+    },
+    books: {
+      type: Array,
+      required: true,
+    },
   },
   methods: {
     showAllBooks() {
-      this.$router.push("proposed-books-list");
+      if (this.reader) {
+        //Pending to change router when the active clubs list view is done
+        this.$router.push("propose-book-form");
+      } else {
+        this.$router.push("proposed-books-list");
+      };
     },
     proposeBook() {
       this.$router.push("propose-book-form");
