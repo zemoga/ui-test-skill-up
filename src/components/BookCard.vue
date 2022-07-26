@@ -24,14 +24,15 @@
           class="font-medium vote-btn"
           variant="secondary"
           @click="addVote"
-          :class="{ 'user-vote': userVote }"
+          :class="{ 'user-vote': userVoted }"
         >
-          <span v-if="!userVote">
-            Vote<v-icon name="hi-solid-plus" scale="0.8" class="icon" />
-          </span>
-          <span v-else>
-            Voted<v-icon name="hi-solid-check" scale="0.8" class="icon" />
-          </span>
+          {{ textBtn }}
+          <span v-if="!userVoted"
+            ><v-icon name="hi-solid-plus" scale="0.8" class="icon"
+          /></span>
+          <span v-else
+            ><v-icon name="hi-solid-check" scale="0.8" class="icon"
+          /></span>
         </button-bc>
       </div>
     </div>
@@ -48,7 +49,7 @@ export default {
   },
   data() {
     return {
-      userVote: false,
+      userVoted: false,
     };
   },
   props: {
@@ -64,25 +65,29 @@ export default {
 
   computed: {
     textBtn() {
-      if (this.isReader) {
+      if (this.isReader && !this.userVoted) {
         return "Join";
-      } else {
+      } else if (!this.isReader && !this.userVoted) {
         return "Vote";
+      } else if (this.isReader && this.userVoted) {
+        return "Joined";
+      } else {
+        return "Voted";
       }
     },
   },
   methods: {
     addVote() {
-      if (this.userVote == false) {
+      if (this.userVoted == false) {
         console.log("now i'm true");
         const addParticipant = this.book.participants + 1;
         console.log(addParticipant);
-        this.userVote = true;
+        this.userVoted = true;
       } else {
         console.log("now i'm false");
         const currentParticipants = this.book.participants;
         console.log(currentParticipants);
-        this.userVote = false;
+        this.userVoted = false;
       }
     },
   },
