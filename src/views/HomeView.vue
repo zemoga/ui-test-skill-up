@@ -57,8 +57,6 @@ export default {
 @media (min-width: 768px) {
   .container {
     align-content: center;
-  }
-  .proposed-books {
     padding: 1.8rem 3.3rem;
   }
 }
