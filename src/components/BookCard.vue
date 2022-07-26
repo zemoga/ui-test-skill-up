@@ -27,6 +27,12 @@
           :class="{ 'user-vote': userVote }"
         >
           {{ textBtn }}
+          <span v-if="!userVote"
+            ><v-icon name="hi-solid-plus" scale="0.8" class="icon"
+          /></span>
+          <span v-else
+            ><v-icon name="hi-solid-check" scale="0.8" class="icon"
+          /></span>
         </button-bc>
       </div>
     </div>
