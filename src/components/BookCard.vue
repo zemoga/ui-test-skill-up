@@ -40,7 +40,6 @@
 
 <script>
 import ButtonBC from "./ui-components/ButtonComponent.vue";
-// import EventService from "../services/EventService.js";
 
 export default {
   name: "BookCard",
@@ -58,15 +57,6 @@ export default {
       required: true,
     },
   },
-  // created() {
-  //   EventService.getBookProfile()
-  //     .then((response) => {
-  //       console.log("book:", response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // },
   methods: {
     addVote() {
       if (this.userVote == false) {

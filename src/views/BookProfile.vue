@@ -37,6 +37,7 @@
 <script>
 import MainHeader from "../components/MainHeader.vue";
 import ButtonBC from "../components/ui-components/ButtonComponent.vue";
+// import EventService from "../services/EventService.js";
 
 export default {
   name: "BookProfile",
@@ -51,6 +52,15 @@ export default {
     };
   },
   props: ["id"],
+  // created() {
+  //   EventService.getBookProfile()
+  //     .then((response) => {
+  //       console.log("book:", response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // },
   methods: {
     addVote() {
       // if (this.userVote == false) {
