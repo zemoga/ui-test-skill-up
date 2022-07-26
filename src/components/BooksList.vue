@@ -57,8 +57,7 @@ export default {
   methods: {
     showAllBooks() {
       if (this.reader) {
-        //Pending to change router when the active clubs list view is done
-        this.$router.push("propose-book-form");
+        this.$router.push("active-clubs-list");
       } else {
         this.$router.push("proposed-books-list");
       }
