@@ -69,6 +69,7 @@ export default {
   }
   .container {
     max-width: 151.5rem;
+    width: 151.5rem;
   }
 }
 </style>
