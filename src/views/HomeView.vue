@@ -54,8 +54,8 @@ export default {
       displayProposeBtn: false,
       proposedBooks: fakeBooks,
       activeBooks: activeClubs,
-      noProposedBooks: false,
-      noActiveBooks: false,
+      noProposedBooks: true,
+      noActiveBooks: true,
     };
   },
 };
