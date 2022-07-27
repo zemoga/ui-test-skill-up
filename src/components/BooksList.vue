@@ -1,7 +1,7 @@
 <template>
   <h2 class="title"><slot name="title"></slot></h2>
   <p class="info text-m font-normal"><slot name="description"></slot></p>
-  <div class="carousel my-5" v-if="noBooks">
+  <div class="carousel my-5" v-if="availableBooks">
     <BookCard
       v-for="book in topBooks"
       :key="book.id"
@@ -9,19 +9,19 @@
       :isReader="reader"
     ></BookCard>
   </div>
-  <div class="no-books carousel" v-if="displayShowAllBtn && !noBooks">
+  <div class="no-books carousel" v-if="displayShowAllBtn && !availableBooks">
     <p class="no-books__text text-s font-semibold">
       <slot name="no-books-text"></slot>
     </p>
   </div>
   <div
     class="btns-container"
-    :class="[displayShowAllBtn && !noBooks ? center : '']"
+    :class="[displayShowAllBtn && !availableBooks ? center : '']"
   >
     <button-bc
       class="font-bold"
       @click="showAllBooks"
-      v-if="displayShowAllBtn && noBooks"
+      v-if="displayShowAllBtn && availableBooks"
     ></button-bc>
     <button-bc
       class="font-bold propose-btn"
@@ -65,7 +65,7 @@ export default {
       type: Array,
       required: true,
     },
-    noBooks: {
+    availableBooks: {
       type: Boolean,
       default: true,
     },

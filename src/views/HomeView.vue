@@ -5,7 +5,7 @@
       <BooksList
         :reader="false"
         :books="proposedBooks"
-        :noBooks="noProposedBooks"
+        :availableBooks="noProposedBooks"
         :displayShowAllBtn="displayShowAllBtn"
       >
         <template v-slot:title>Proposed books</template>
@@ -23,7 +23,7 @@
         :displayProposeBtn="false"
         :reader="true"
         :books="activeBooks"
-        :noBooks="noActiveBooks"
+        :availableBooks="noActiveBooks"
         :displayShowAllBtn="displayShowAllBtn"
       >
         <template v-slot:title>Active clubs</template>
