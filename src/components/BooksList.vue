@@ -1,7 +1,7 @@
 <template>
   <h2 class="title"><slot name="title"></slot></h2>
   <p class="info text-m font-normal"><slot name="description"></slot></p>
-  <div class="carousel my-5">
+  <div class="carousel my-5" v-if="noBooks">
     <BookCard
       v-for="book in topBooks"
       :key="book.id"
@@ -9,8 +9,20 @@
       :isReader="reader"
     ></BookCard>
   </div>
-  <div class="btns-container">
-    <button-bc class="font-bold" @click="showAllBooks"></button-bc>
+  <div class="no-books carousel" v-if="displayShowAllBtn && !noBooks">
+    <p class="no-books__text text-s font-semibold">
+      <slot name="no-books-text"></slot>
+    </p>
+  </div>
+  <div
+    class="btns-container"
+    :class="[displayShowAllBtn && !noBooks ? center : '']"
+  >
+    <button-bc
+      class="font-bold"
+      @click="showAllBooks"
+      v-if="displayShowAllBtn && noBooks"
+    ></button-bc>
     <button-bc
       class="font-bold propose-btn"
       variant="tertiary"
@@ -35,7 +47,11 @@ export default {
     BookCard,
     "button-bc": ButtonBC,
   },
-
+  data() {
+    return {
+      center: "center",
+    };
+  },
   props: {
     displayProposeBtn: {
       type: Boolean,
@@ -49,6 +65,14 @@ export default {
       type: Array,
       required: true,
     },
+    noBooks: {
+      type: Boolean,
+      default: true,
+    },
+    displayShowAllBtn: {
+      type: Boolean,
+      default: true,
+    },
   },
   methods: {
     showAllBooks() {
@@ -56,7 +80,7 @@ export default {
         this.$router.push("active-clubs-list");
       } else {
         this.$router.push("proposed-books-list");
-      };
+      }
     },
     proposeBook() {
       this.$router.push("propose-book-form");
@@ -98,12 +122,35 @@ export default {
   display: none;
 }
 
+.no-books {
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  height: 20rem;
+}
+
+.no-books__text {
+  color: var(--quaternary-color);
+}
+
+.center {
+  position: absolute;
+  top: 68%;
+  right: calc(50% - 9.9rem);
+}
+
 .propose-btn {
   margin-left: 0.8rem;
 }
 
 .arrow-right-icon {
   margin-left: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  .center {
+    right: calc(50% - 13.9rem);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -122,6 +169,12 @@ export default {
     height: 19rem;
     margin-block: 2.4rem;
   }
+
+  .no-books {
+    align-items: center;
+    height: 25rem;
+    margin-block: 0;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -130,7 +183,10 @@ export default {
     top: 4rem;
     right: 3.3rem;
   }
-
+  .center {
+    top: 71%;
+    right: calc(50% - 14.7rem);
+  }
   .propose-btn {
     margin-left: 2.4rem;
   }

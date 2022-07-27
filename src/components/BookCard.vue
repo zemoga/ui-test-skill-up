@@ -143,10 +143,6 @@ export default {
   color: var(--white);
 }
 
-.icon {
-  margin-left: 0.8rem;
-}
-
 @media (min-width: 768px) {
   .book-card {
     padding: 2.4rem;
@@ -154,7 +150,7 @@ export default {
 
   .vote-btn {
     width: 10.8rem;
-    padding-inline: 1.9rem;
+    padding-inline: 1.8rem;
   }
 }
 </style>

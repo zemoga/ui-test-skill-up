@@ -1,20 +1,37 @@
 <template>
-  <MainHeader :displayBtn="displayBtn"></MainHeader>
+  <MainHeader :displayBackBtn="displayBackBtn"></MainHeader>
   <main>
     <section class="container proposed-books">
-      <BooksList :reader="false" :books="proposedBooks">
+      <BooksList
+        :reader="false"
+        :books="proposedBooks"
+        :noBooks="noProposedBooks"
+        :displayShowAllBtn="displayShowAllBtn"
+      >
         <template v-slot:title>Proposed books</template>
         <template v-slot:description
           >Vote for the books you want to read
+        </template>
+        <template v-slot:no-books-text>
+          We don't have any proposed books yet )-:
         </template>
       </BooksList>
     </section>
 
     <section class="container active-clubs">
-      <BooksList :displayProposeBtn="false" :reader="true" :books="activeBooks">
+      <BooksList
+        :displayProposeBtn="false"
+        :reader="true"
+        :books="activeBooks"
+        :noBooks="noActiveBooks"
+        :displayShowAllBtn="displayShowAllBtn"
+      >
         <template v-slot:title>Active clubs</template>
         <template v-slot:description
           >Find active book clubs and their members
+        </template>
+        <template v-slot:no-books-text>
+          We don't have any active books yet )-:
         </template>
       </BooksList>
     </section>
@@ -35,10 +52,13 @@ export default {
   },
   data() {
     return {
-      displayBtn: false,
+      displayBackBtn: false,
       displayProposeBtn: false,
+      displayShowAllBtn: true,
       proposedBooks: fakeBooks,
       activeBooks: activeClubs,
+      noProposedBooks: true,
+      noActiveBooks: true,
     };
   },
 };
@@ -52,12 +72,16 @@ export default {
 }
 .active-clubs {
   margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 
 @media (min-width: 768px) {
   .container {
     align-content: center;
     padding: 1.8rem 3.3rem;
+  }
+  .active-clubs {
+    margin-bottom: 1.3rem;
   }
 }
 
@@ -67,6 +91,7 @@ export default {
   }
   .container {
     max-width: 151.5rem;
+    width: 151.5rem;
   }
 }
 </style>
