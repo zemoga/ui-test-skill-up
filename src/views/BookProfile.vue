@@ -1,5 +1,5 @@
 <template>
-  <MainHeader class="mx-6 main-header" :class="stickyHeight"></MainHeader>
+  <MainHeader class="mx-6 main-header"></MainHeader>
   <main>
     <article class="book-profile mx-6">
       <v-icon name="bi-book" scale="3" class="book-icon" />
@@ -26,9 +26,9 @@
         class="vote-btn font-medium"
         variant="secondary"
         @click="addVote"
-        :class="{ 'user-vote': userVote }"
+        :class="{ 'user-vote': userVoted }"
       >
-        <span v-if="!userVote">
+        <span v-if="!userVoted">
           Vote<v-icon name="hi-solid-plus" scale="0.8" class="icon" />
         </span>
         <span v-else>
@@ -55,27 +55,24 @@ export default {
   },
   data() {
     return {
-      userVote: false,
+      userVoted: false,
       bookUrl: this.book.url,
     };
   },
   props: ["book"],
-  created() {
-    console.log(this.book);
-  },
   methods: {
     addVote() {
-      // if (this.userVote == false) {
-      //   console.log("now i'm true");
-      //   const addParticipant = this.book.participants + 1;
-      //   console.log(addParticipant);
-      //   this.userVote = true;
-      // } else {
-      //   console.log("now i'm false");
-      //   const currentParticipants = this.book.participants;
-      //   console.log(currentParticipants);
-      //   this.userVote = false;
-      // }
+      if (this.userVoted == false) {
+        console.log("now i'm true");
+        const addParticipant = this.book.participants + 1;
+        console.log(addParticipant);
+        this.userVoted = true;
+      } else {
+        console.log("now i'm false");
+        const currentParticipants = this.book.participants;
+        console.log(currentParticipants);
+        this.userVoted = false;
+      }
     },
   },
 };
@@ -95,6 +92,7 @@ export default {
     #523da2
   );
 }
+
 main {
   margin: 0 auto;
 }
@@ -153,6 +151,16 @@ main {
 
 .vote-btn {
   margin-bottom: 1.6rem;
+}
+
+.user-vote {
+  border: none;
+  background: var(--accent-color);
+  color: var(--white);
+}
+
+.icon {
+  margin-left: 0.4rem;
 }
 
 .book-profile__info {
