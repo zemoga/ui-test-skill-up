@@ -3,23 +3,18 @@
   <main>
     <article class="book-profile mx-6">
       <v-icon name="bi-book" scale="3" class="book-icon" />
-      <h2 class="book-profile__title">Hamlet</h2>
-      <p class="book-profile__author text-l font-medium">William Shakespeare</p>
+      <h2 class="book-profile__title">{{ book.title }}</h2>
+      <p class="book-profile__author text-l font-medium">{{ book.author }}</p>
       <button-bc class="buy-btn font-bold" variant="secondary">
         Where to buy?</button-bc
       >
       <div class="book-synopsis">
         <p class="book-synopsis__title text-xl font-semibold">Synopsis</p>
-        <p class="book-synopsis__info text-m">
-          The Tragedy of Hamlet, Prince of Denmark, often shortened to Hamlet,
-          is a tragedy written by William Shakespeare sometime between 1599 and
-          1601. It is Shakespeare's longest play, with 29,551 words. Set in
-          Denmark, the play depicts Prince Hamlet and his revenge against his
-          uncle, Claudius, who has murdered Hamlet's father in order to seize
-          his throne and marry Hamlet's mother.
-        </p>
+        <p class="book-synopsis__info text-m">{{ book.synopsis }}</p>
       </div>
-      <p class="book-profile__participants text-s">12 Interested</p>
+      <p class="book-profile__participants text-s">
+        {{ book.participants }} Interested
+      </p>
       <button-bc
         class="vote-btn font-medium"
         variant="secondary"
@@ -44,7 +39,6 @@
 <script>
 import MainHeader from "../components/MainHeader.vue";
 import ButtonBC from "../components/ui-components/ButtonComponent.vue";
-// import EventService from "../services/EventService.js";
 
 export default {
   name: "BookProfile",
@@ -57,16 +51,10 @@ export default {
       userVote: false,
     };
   },
-  props: {},
-  // created() {
-  //   EventService.getBookProfile()
-  //     .then((response) => {
-  //       console.log("book:", response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // },
+  props: ["book"],
+  created() {
+    console.log(this.book);
+  },
   methods: {
     addVote() {
       // if (this.userVote == false) {
