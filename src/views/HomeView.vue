@@ -6,7 +6,6 @@
         :reader="false"
         :books="proposedBooks"
         :availableBooks="noProposedBooks"
-        :displayShowAllBtn="displayShowAllBtn"
       >
         <template v-slot:title>Proposed books</template>
         <template v-slot:description
@@ -24,7 +23,6 @@
         :reader="true"
         :books="activeBooks"
         :availableBooks="noActiveBooks"
-        :displayShowAllBtn="displayShowAllBtn"
       >
         <template v-slot:title>Active clubs</template>
         <template v-slot:description
@@ -54,11 +52,10 @@ export default {
     return {
       displayBackBtn: false,
       displayProposeBtn: false,
-      displayShowAllBtn: true,
       proposedBooks: fakeBooks,
       activeBooks: activeClubs,
-      noProposedBooks: true,
-      noActiveBooks: true,
+      noProposedBooks: false,
+      noActiveBooks: false,
     };
   },
 };

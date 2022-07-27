@@ -9,19 +9,16 @@
       :isReader="reader"
     ></BookCard>
   </div>
-  <div class="no-books carousel" v-if="displayShowAllBtn && !availableBooks">
+  <div class="no-books carousel" v-if="!availableBooks">
     <p class="no-books__text text-s font-semibold">
       <slot name="no-books-text"></slot>
     </p>
   </div>
-  <div
-    class="btns-container"
-    :class="[displayShowAllBtn && !availableBooks ? center : '']"
-  >
+  <div class="btns-container" :class="[!availableBooks ? center : '']">
     <button-bc
       class="font-bold"
       @click="showAllBooks"
-      v-if="displayShowAllBtn && availableBooks"
+      v-if="availableBooks"
     ></button-bc>
     <button-bc
       class="font-bold propose-btn"
@@ -66,10 +63,6 @@ export default {
       required: true,
     },
     availableBooks: {
-      type: Boolean,
-      default: true,
-    },
-    displayShowAllBtn: {
       type: Boolean,
       default: true,
     },
