@@ -1,13 +1,20 @@
 <template>
-  <MainHeader class="mx-6"></MainHeader>
+  <MainHeader class="mx-6 main-header" :class="stickyHeight"></MainHeader>
   <main>
     <article class="book-profile mx-6">
       <v-icon name="bi-book" scale="3" class="book-icon" />
       <h2 class="book-profile__title">{{ book.title }}</h2>
       <p class="book-profile__author text-l font-medium">{{ book.author }}</p>
-      <button-bc class="buy-btn font-bold" variant="secondary">
-        Where to buy?</button-bc
-      >
+      <button-bc class="buy-btn" variant="secondary">
+        <a
+          :href="bookUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-bold buy-btn__url"
+        >
+          Where to buy?
+        </a>
+      </button-bc>
       <div class="book-synopsis">
         <p class="book-synopsis__title text-xl font-semibold">Synopsis</p>
         <p class="book-synopsis__info text-m">{{ book.synopsis }}</p>
@@ -49,6 +56,7 @@ export default {
   data() {
     return {
       userVote: false,
+      bookUrl: this.book.url,
     };
   },
   props: ["book"],
@@ -74,6 +82,19 @@ export default {
 </script>
 
 <style scoped>
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to right bottom,
+    #45328c,
+    #483591,
+    #4b3797,
+    #4f3a9c,
+    #523da2
+  );
+}
 main {
   margin: 0 auto;
 }
@@ -105,9 +126,13 @@ main {
   margin-bottom: 2.4rem;
   padding-inline: 0.8rem;
   height: 3.2rem;
-  font-size: 1.4rem;
 }
 
+.buy-btn__url {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--accent-color);
+}
 .book-synopsis {
   max-width: 40rem;
   min-height: 18.2rem;
