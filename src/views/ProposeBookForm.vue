@@ -74,7 +74,9 @@
         <ButtonBC
           type="submit"
           :disabled="buttonDisable"
-          variant="primary"
+          :class="[
+            buttonDisable ? (variant = 'disabled') : (variant = 'primary'),
+          ]"
           class="submit-button"
         >
           Let's propose this book!
@@ -160,11 +162,12 @@ main {
   width: 65%;
   text-align: center;
   margin-top: 1.6rem;
+  margin-bottom: 3rem;
   font-family: var(--secondary-font);
 }
 .submit-button {
   margin-top: 4rem;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.25);
 }
 .icon-arrow-right {
   margin-left: 1rem;

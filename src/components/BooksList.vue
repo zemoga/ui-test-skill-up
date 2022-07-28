@@ -12,9 +12,11 @@
       <slot name="no-books-text"></slot>
     </p>
   </div>
+
   <div class="btns-container" :class="[ifNonAvailableBooks ? 'center' : '']">
     <button-bc
       class="font-bold"
+      variant="primary"
       @click="showAllBooks"
       v-if="!ifNonAvailableBooks"
     ></button-bc>

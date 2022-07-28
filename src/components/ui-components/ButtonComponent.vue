@@ -6,6 +6,7 @@
       secondary: isSecondary,
       tertiary: isTertiary,
       arrow: isAnArrow,
+      disabled: isDisabled,
     }"
   >
     <slot>Show all</slot>
@@ -18,11 +19,14 @@ export default {
   props: {
     variant: {
       type: String,
-      default: "primary",
       validator: (propValue) => {
-        return ["primary", "secondary", "tertiary", "arrow"].includes(
-          propValue
-        );
+        return [
+          "primary",
+          "secondary",
+          "tertiary",
+          "arrow",
+          "disabled",
+        ].includes(propValue);
       },
     },
   },
@@ -41,6 +45,9 @@ export default {
     },
     isAnArrow() {
       return this.variant === "arrow";
+    },
+    isDisabled() {
+      return this.variant === "disabled";
     },
   },
 };
@@ -77,6 +84,12 @@ export default {
   padding: 0;
   margin: 0;
   justify-self: left;
+}
+
+.disabled {
+  border: 0.2rem solid var(--accent-color);
+  color: var(--accent-color);
+  opacity: 0.3;
 }
 
 @media (min-width: 768px) {

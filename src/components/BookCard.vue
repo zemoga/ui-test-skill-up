@@ -1,5 +1,8 @@
 <template>
-  <div class="book-card px-5 py-5">
+  <div
+    class="book-card px-5 py-5"
+    @click.self="this.$router.push(`/book/${book.id}`)"
+  >
     <div class="book-card__info">
       <p
         data-testid="title"
@@ -15,10 +18,10 @@
       <v-icon name="bi-book" scale="3" class="book-icon" />
       <div class="book-card__participants">
         <p v-if="isReader" class="book-card__participants--text text-s">
-          {{ book.participants }} Readers
+          {{ participants }} Readers
         </p>
         <p v-else class="book-card__participants--text text-s">
-          {{ book.participants }} Interested
+          {{ participants }} Interested
         </p>
         <button-bc
           class="font-medium vote-btn"
@@ -50,6 +53,7 @@ export default {
   data() {
     return {
       userVoted: false,
+      participants: this.book.participants,
     };
   },
   props: {
@@ -79,14 +83,10 @@ export default {
   methods: {
     addVote() {
       if (this.userVoted == false) {
-        console.log("now i'm true");
-        const addParticipant = this.book.participants + 1;
-        console.log(addParticipant);
+        this.participants = this.participants + 1;
         this.userVoted = true;
       } else {
-        console.log("now i'm false");
-        const currentParticipants = this.book.participants;
-        console.log(currentParticipants);
+        this.participants = this.participants - 1;
         this.userVoted = false;
       }
     },
@@ -105,6 +105,7 @@ export default {
   background: var(--white);
   border-radius: 0.8rem;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .book-card__info--title {

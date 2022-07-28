@@ -1,7 +1,7 @@
 <template>
   <div class="proposed-books-info-container px-5">
     <MainHeader></MainHeader>
-    <h2 class="proposed-books-info__title">Proposed books</h2>
+    <h2 class="proposed-books-info__title">All proposed books</h2>
     <span class="proposed-books-info__description text-m"
       >Find here the list with all proposed books
     </span>
