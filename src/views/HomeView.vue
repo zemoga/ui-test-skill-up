@@ -2,11 +2,7 @@
   <MainHeader :displayBackBtn="displayBackBtn"></MainHeader>
   <main>
     <section class="container proposed-books">
-      <BooksList
-        :reader="false"
-        :books="proposedBooks"
-        :availableBooks="noProposedBooks"
-      >
+      <BooksList :reader="false" :books="proposedBooks">
         <template v-slot:title>Proposed books</template>
         <template v-slot:description
           >Vote for the books you want to read
@@ -18,12 +14,7 @@
     </section>
 
     <section class="container active-clubs">
-      <BooksList
-        :displayProposeBtn="false"
-        :reader="true"
-        :books="activeBooks"
-        :availableBooks="noActiveBooks"
-      >
+      <BooksList :displayProposeBtn="false" :reader="true" :books="activeBooks">
         <template v-slot:title>Active clubs</template>
         <template v-slot:description
           >Find active book clubs and their members
@@ -54,8 +45,6 @@ export default {
       displayProposeBtn: false,
       proposedBooks: fakeBooks,
       activeBooks: activeClubs,
-      noProposedBooks: true,
-      noActiveBooks: true,
     };
   },
 };

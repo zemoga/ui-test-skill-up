@@ -1,24 +1,22 @@
 <template>
   <h2 class="title"><slot name="title"></slot></h2>
   <p class="info text-m font-normal"><slot name="description"></slot></p>
-  <div class="carousel my-5" v-if="availableBooks">
+  <div class="carousel my-5" :class="availableBooks">
     <BookCard
       v-for="book in topBooks"
       :key="book.id"
       :book="book"
       :isReader="reader"
     ></BookCard>
-  </div>
-  <div class="no-books carousel" v-if="!availableBooks">
-    <p class="no-books__text text-s font-semibold">
+    <p class="no-books__text text-s font-semibold" v-if="availableBooks">
       <slot name="no-books-text"></slot>
     </p>
   </div>
-  <div class="btns-container" :class="[!availableBooks ? center : '']">
+  <div class="btns-container" :class="centerBtn">
     <button-bc
       class="font-bold"
       @click="showAllBooks"
-      v-if="availableBooks"
+      v-if="!availableBooks"
     ></button-bc>
     <button-bc
       class="font-bold propose-btn"
@@ -45,9 +43,7 @@ export default {
     "button-bc": ButtonBC,
   },
   data() {
-    return {
-      center: "center",
-    };
+    return {};
   },
   props: {
     displayProposeBtn: {
@@ -61,10 +57,6 @@ export default {
     books: {
       type: Array,
       required: true,
-    },
-    availableBooks: {
-      type: Boolean,
-      default: true,
     },
   },
   methods: {
@@ -87,6 +79,13 @@ export default {
       });
 
       return sortedBooks.slice(0, 5);
+    },
+    availableBooks() {
+      console.log(this.books);
+      return this.books === undefined || this.books <= 0 ? "no-books" : "";
+    },
+    centerBtn() {
+      return this.books === undefined || this.books <= 0 ? "center" : "";
     },
   },
 };
@@ -118,8 +117,6 @@ export default {
 .no-books {
   align-items: center;
   justify-content: center;
-  gap: 0;
-  height: 20rem;
 }
 
 .no-books__text {
