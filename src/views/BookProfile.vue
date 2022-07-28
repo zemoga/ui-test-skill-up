@@ -20,7 +20,7 @@
         <p class="book-synopsis__info text-m">{{ book.synopsis }}</p>
       </div>
       <p class="book-profile__participants text-s">
-        {{ book.participants }} Interested
+        {{ participants }} Interested
       </p>
       <button-bc
         class="vote-btn font-medium"
@@ -35,10 +35,7 @@
           Voted<v-icon name="hi-solid-check" scale="0.8" class="icon" />
         </span>
       </button-bc>
-      <p class="book-profile__info text-s font-normal">
-        tap the "vote" button to be part of our club once it has five or more
-        interested readers
-      </p>
+      <p class="book-profile__info text-s font-normal">{{ message }}</p>
     </article>
   </main>
 </template>
@@ -57,20 +54,21 @@ export default {
     return {
       userVoted: false,
       bookUrl: this.book.url,
+      participants: this.book.participants,
+      message: `tap the "vote" button to be part of our club once it has five or more
+        interested readers`,
     };
   },
   props: ["book"],
   methods: {
     addVote() {
       if (this.userVoted == false) {
-        console.log("now i'm true");
-        const addParticipant = this.book.participants + 1;
-        console.log(addParticipant);
+        this.message = `now you're part of this club! once it starts you'll find this book profile on "active clubs"`;
+        this.participants = this.participants + 1;
         this.userVoted = true;
       } else {
-        console.log("now i'm false");
-        const currentParticipants = this.book.participants;
-        console.log(currentParticipants);
+        this.message = `tap the "vote" button to be part of our club once it has five or more interested readers`;
+        this.participants = this.participants - 1;
         this.userVoted = false;
       }
     },
@@ -102,7 +100,6 @@ main {
   align-items: center;
   max-width: 60rem;
   min-height: 64.5rem;
-  max-height: 80rem;
   margin-top: 0.4rem;
   margin-bottom: 2rem;
   padding: 3rem;
